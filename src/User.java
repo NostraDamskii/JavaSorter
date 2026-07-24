@@ -1,7 +1,9 @@
+package src;
+
 public class User {
   private final String name;
   private final String email;
-  private final String password;
+  private final int password;
 
   public User(Builder builder) {
     this.name = builder.name;
@@ -17,14 +19,14 @@ public class User {
     return email;
   }
 
-  public String getPassword() {
+  public int getPassword() {
     return password;
   }
 
   public static class Builder {
     private String name;
     private String email;
-    private String password;
+    private int password;
 
     public Builder() {
     }
@@ -39,7 +41,7 @@ public class User {
       return this;
     }
 
-    public Builder password(String password) {
+    public Builder password(int password) {
       this.password = password;
       return this;
     }

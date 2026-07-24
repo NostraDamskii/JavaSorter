@@ -1,4 +1,4 @@
-import User.User;
+package src;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-
-
+public class UserFileLoader {
 
   public static void main(String[] args) {
 
@@ -20,28 +18,18 @@ public class Main {
 
     scanner.nextLine();
 
-    switch (choice) {
-      case 1:
-        users = loadUsersFromFile(filePath);
-        break;
-      case 2:
-        users = loadUsersFromConsole();
-        break;
-      default:
+    users = switch (choice) {
+      case 1 -> loadUsersFromFile(filePath);
+      case 2 -> loadUsersFromConsole();
+      default -> {
         System.out.println("Такого метода нет. Используем ручной метод ввода");
-        users = loadUsersFromConsole();
-        break;
-    }
-
-
-
-
-
-
+        yield loadUsersFromConsole();
+      }
+    };
   }
 
-  public static List<User> loadUsersFromConsole(){
-    List<User> usersFromConsole=new ArrayList<>();
+  public static List<User> loadUsersFromConsole() {
+    List<User> usersFromConsole = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -55,20 +43,18 @@ public class Main {
     System.out.print("Введите e-mail: ");
     String mail = scanner.nextLine();
 
-    User user = new User(name, password, mail);
-
+    User user = new User.Builder().name(name).password(password).email(mail).build();
     System.out.println(user);
-
     return usersFromConsole;
   }
 
 
-  public static List<User> loadUsersFromFile(String file_name){
-    List<User> usersFromFile=new ArrayList<>();
+  public static List<User> loadUsersFromFile(String file_name) {
+    List<User> usersFromFile = new ArrayList<>();
 
-    try(BufferedReader reader=new BufferedReader(new FileReader(file_name))){
+    try (BufferedReader reader = new BufferedReader(new FileReader(file_name))) {
       String line;
-      int lineNumber=0;
+      int lineNumber = 0;
       while ((line = reader.readLine()) != null) {
         lineNumber++;
 
@@ -102,20 +88,17 @@ public class Main {
       throw new IllegalArgumentException("Имя пользователя не может быть пустым");
     }
 
-    String strpassword=parts[1].trim();
+    String strpassword = parts[1].trim();
     if (strpassword.isEmpty()) {
       throw new IllegalArgumentException("Пароль пользователя не может быть пустым");
     }
-    int password=Integer.parseInt(strpassword);
+    int password = Integer.parseInt(strpassword);
 
-    String mail=parts[2].trim();
-    if( mail.isEmpty()) {
+    String mail = parts[2].trim();
+    if (mail.isEmpty()) {
       throw new IllegalArgumentException("Почта пользователя не может быть пустой");
     }
 
-
-    return new User(name, password, mail);
+    return new User.Builder().name(name).email(mail).password(password).build();
   }
-
-
 }
