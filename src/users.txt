@@ -1,0 +1,3 @@
+Роман Борбров;12345;roman.borbrov@example.com
+Света Шумовая;67890;sveta.shumovaya@example.com
+Фиданука Япомиду;11111;fidanuka.yapomidu@example.com
