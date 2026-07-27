@@ -14,7 +14,7 @@ public class FileWrite
         {
             return;
         }
-        // Открываем файл с помощью встроенного класа Java FileWriter, если файл существует дозаписать в него (true указывает на это).
+        // Открываем файл с помощью встроенного класса Java FileWriter, если файл существует дозаписать в него (true указывает на это).
         try (FileWriter fileWriter = new FileWriter(fileName, true);
              PrintWriter printWriter = new PrintWriter(fileWriter))
         {
