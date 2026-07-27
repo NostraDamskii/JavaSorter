@@ -3,7 +3,6 @@ package src;
 import java.util.List;
 
 public class RandomFillStrategy implements UserFillStrategy {
-
   private final int count;
 
   public RandomFillStrategy(int count) {
@@ -12,6 +11,9 @@ public class RandomFillStrategy implements UserFillStrategy {
 
   @Override
   public void fill(List<User> users) {
-    // TODO: тут генерация новых пользователей и запись в список
+    for (int i = 0; i < count; i++) {
+      users.add(RandomGen.randomGenerateUser());
+    }
+    System.out.println("Успешно сгенерировано " + count + " случайных пользователей.");
   }
 }

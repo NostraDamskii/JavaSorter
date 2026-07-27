@@ -50,4 +50,9 @@ public class User {
       return new User(this);
     }
   }
+
+  @Override
+  public String toString() {
+    return String.format("Имя: %-12s | Email: %-22s | Пароль: %d", name, email, password);
+  }
 }

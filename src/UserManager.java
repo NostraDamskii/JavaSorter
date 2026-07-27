@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-
   private final List<User> users = new ArrayList<>();
   private UserFillStrategy strategy;
 
@@ -17,6 +16,10 @@ public class UserManager {
       throw new IllegalStateException("Стратегия заполнения не установлена!");
     }
     strategy.fill(users);
+  }
+
+  public void clear() {
+    users.clear();
   }
 
   public List<User> getUsers() {
