@@ -16,7 +16,7 @@ public class RandomGen
         String name = NAMES[random.nextInt(NAMES.length)];
         String email = EMAILS[random.nextInt(EMAILS.length)];
         // Случайная генерация пароля с помощью метода встроенного класса java Random .nextInt <метод класса random который возвращает случайное значение в пределах указанного диапазона
-        int password = random.nextInt(100000, 999999);;
+        int password = random.nextInt(100000, 999999);
         // Возвращаем пользователя со случайными данными
         return new User.Builder().name(name).email(email).password(password).build();
     }
