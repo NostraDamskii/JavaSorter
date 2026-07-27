@@ -1,5 +1,10 @@
 package src;
 
+import src.fillCollections.ConsoleFillStrategy;
+import src.fillCollections.FileFillStrategy;
+import src.fillCollections.RandomFillStrategy;
+import src.user.User;
+
 import java.util.List;
 import java.util.Scanner;
 

@@ -6,6 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="7bc29ef9-affc-42b1-af67-23561c26f52b" name="Changes" comment="add while">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/ConsoleFillStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EvenSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/EvenSorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/FileFillStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomFillStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFileLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/UserFillStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserSortStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSortStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WriteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WriteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +61,23 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="3Grl8i6QSUuJTKOM7D5LiNd2PZZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Demonstrator.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RandomGen.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;SliwaWS/ReaderStrategy&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/Aston/Hw4&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Demonstrator.executor": "Run",
+    "Application.MainApp.executor": "Run",
+    "Application.RandomGen.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/Aston/Hw4",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="JavaSorter" />

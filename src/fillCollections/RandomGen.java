@@ -1,4 +1,6 @@
-package src;
+package src.fillCollections;
+import src.user.User;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 

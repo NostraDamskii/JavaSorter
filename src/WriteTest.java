@@ -1,5 +1,8 @@
 package src;
 
+import src.fillCollections.RandomGen;
+import src.user.User;
+
 public class WriteTest {
 
     public static void main(String[] args)

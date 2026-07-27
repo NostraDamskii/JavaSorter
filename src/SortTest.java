@@ -1,5 +1,9 @@
 package src;
 
+import src.fillCollections.RandomGen;
+import src.sorting.EvenSorting;
+import src.user.User;
+
 // Класс проверки чётной сортировки
 public class SortTest {
 

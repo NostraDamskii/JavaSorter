@@ -1,4 +1,6 @@
-package src;
+package src.sorting;
+
+import src.user.User;
 
 import java.util.Comparator;
 

@@ -1,5 +1,7 @@
 package src;
 // Импорт FileWriter для открытия файла
+import src.user.User;
+
 import java.io.FileWriter;
 import java.io.IOException;
 //Импорт PrintWriter для удобной записи в файл.

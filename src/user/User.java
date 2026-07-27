@@ -1,4 +1,4 @@
-package src;
+package src.user;
 
 public class User {
   private final String name;

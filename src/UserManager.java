@@ -1,5 +1,8 @@
 package src;
 
+import src.fillCollections.UserFillStrategy;
+import src.user.User;
+
 import java.util.ArrayList;
 import java.util.List;
 

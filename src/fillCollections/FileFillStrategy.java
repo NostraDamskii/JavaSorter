@@ -1,4 +1,6 @@
-package src;
+package src.fillCollections;
+
+import src.user.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -46,9 +48,22 @@ public class FileFillStrategy implements UserFillStrategy {
     if (parts.length < 3) {
       throw new IllegalArgumentException("Нужно 3 поля через ';': Имя;пароль;почта");
     }
+
     String name = parts[0].trim();
-    int password = Integer.parseInt(parts[1].trim());
+    if (name.isEmpty()) {
+      throw new IllegalArgumentException("Имя пользователя не может быть пустым");
+    }
+
+    String strpassword = parts[1].trim();
+    if (strpassword.isEmpty()) {
+      throw new IllegalArgumentException("Пароль пользователя не может быть пустым");
+    }
+    int password = Integer.parseInt(strpassword);
+
     String mail = parts[2].trim();
+    if (mail.isEmpty()) {
+      throw new IllegalArgumentException("Почта пользователя не может быть пустой");
+    }
 
     return new User.Builder().name(name).email(mail).password(password).build();
   }
