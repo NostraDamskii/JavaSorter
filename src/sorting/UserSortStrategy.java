@@ -1,7 +1,6 @@
 package src.sorting;
 
 import src.user.User;
-
 import java.util.Comparator;
 
 public enum UserSortStrategy implements Comparator<User> {

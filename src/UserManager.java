@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-  private final List<User> users = new ArrayList<>();
+  private List<User> users = new ArrayList<>();
   private UserFillStrategy strategy;
 
   public void setStrategy(UserFillStrategy strategy) {
@@ -19,6 +19,10 @@ public class UserManager {
       throw new IllegalStateException("Стратегия заполнения не установлена!");
     }
     strategy.fill(users);
+  }
+  // Добавил сеттер юзеров что бы сделать запись в файл с результатами сортировки, убрал модификатор final с поля List<user>
+  public void setUsers(List<User> users) {
+    this.users = users;
   }
 
   public void clear() {
