@@ -18,15 +18,63 @@ public class ConsoleFillStrategy implements UserFillStrategy {
     System.out.println("Заполнение вручную (" + count + " пользователей):");
     for (int i = 0; i < count; i++) {
       System.out.println("\nПользователь #" + (i + 1));
-      System.out.print("Введите имя: ");
-      String name = scanner.nextLine();
+      String name;
+
+      while (true) {
+
+        System.out.print("Введите имя: ");
+        name = scanner.nextLine();
+
+        if (!name.isBlank()) {
+          break;
+        }
+
+        System.out.println("Ошибка! Имя не может быть пустым.");
+      }
 
       System.out.print("Введите пароль (число): ");
-      int password = scanner.nextInt();
+      int password;
+
+      while (true) {
+
+        System.out.print("Введите пароль (число): ");
+
+        if (scanner.hasNextInt()) {
+
+          password = scanner.nextInt();
+          scanner.nextLine();
+
+          if (password > 0) {
+            break;
+          }
+
+          System.out.println("Пароль должен быть больше 0.");
+
+        } else {
+
+          System.out.println("Введите целое число!");
+          scanner.nextLine();
+        }
+      }
       scanner.nextLine();
 
       System.out.print("Введите e-mail: ");
-      String mail = scanner.nextLine();
+      String mail;
+
+      while (true) {
+
+        System.out.print("Введите e-mail: ");
+        mail = scanner.nextLine();
+
+        if (!mail.isBlank()
+                && mail.contains("@")
+                && mail.contains(".")) {
+
+          break;
+        }
+
+        System.out.println("Некорректный e-mail.");
+      }
 
       User user = new User.Builder().name(name).password(password).email(mail).build();
       users.add(user);

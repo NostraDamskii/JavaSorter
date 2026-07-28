@@ -6,21 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7bc29ef9-affc-42b1-af67-23561c26f52b" name="Changes" comment="add while">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/ConsoleFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EvenSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/EvenSorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/FileFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFileLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/UserFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserSortStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSortStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WriteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WriteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fillCollections/ConsoleFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/ConsoleFillStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +34,12 @@
     &quot;assignee&quot;: &quot;Slashaershov&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/NostraDamskii/JavaSorter.git&quot;,
-    &quot;accountId&quot;: &quot;469a2afe-db31-49ec-9c43-e2fa2d539e20&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NostraDamskii/JavaSorter",
+    "accountId": "7b175594-03b9-47fe-a886-1c0149a05ceb"
   }
-}</component>
+}]]></component>
   <component name="MavenRunner">
     <option name="jreName" value="temurin-17" />
   </component>
@@ -71,7 +57,10 @@
     "Application.MainApp.executor": "Run",
     "Application.RandomGen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/IdeaProjects/Aston/Hw4",
@@ -90,6 +79,14 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -182,6 +179,9 @@
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
