@@ -3,16 +3,10 @@ package src.menu;
 import java.util.Scanner;
 import src.UserManager;
 
-public class ClearCommand implements MenuCommand {
+public class ClearCommand extends BaseMenuCommand {
 
-  @Override
-  public int getActionCode() {
-    return 7;
-  }
-
-  @Override
-  public String getDescription() {
-    return "Очистить текущий массив";
+  public ClearCommand(int actionCode) {
+    super(actionCode, "Очистить текущий массив");
   }
 
   @Override

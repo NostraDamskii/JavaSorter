@@ -12,22 +12,22 @@ import src.menu.ParallelCountCommand;
 import src.menu.SortingCommand;
 
 public class MainApp {
-
   private final Scanner scanner = new Scanner(System.in);
   private final UserManager userManager = new UserManager();
 
+  // TreeMap гарантирует автоматическую сортировку пунктов меню по возрастанию (1, 2, 3...)
   private final Map<Integer, MenuCommand> menuCommands = new TreeMap<>();
 
   public MainApp() {
+    // Регистрация команд системы в одном месте
     registerCommand(new FillStrategyCommand(1, "Заполнить массив случайными пользователями"));
     registerCommand(new FillStrategyCommand(2, "Заполнить массив вручную (через консоль)"));
     registerCommand(new FillStrategyCommand(3, "Заполнить массив из файла"));
-    registerCommand(new DisplayUsersCommand());
-    registerCommand(new ExportToFileCommand());
-    registerCommand(new SortingCommand());
-    registerCommand(new ClearCommand());
-
-    registerCommand(new ParallelCountCommand());
+    registerCommand(new DisplayUsersCommand(4));
+    registerCommand(new ExportToFileCommand(5));
+    registerCommand(new SortingCommand(6));
+    registerCommand(new ClearCommand(7));
+    registerCommand(new ParallelCountCommand(8));
   }
 
   private void registerCommand(MenuCommand command) {
@@ -70,6 +70,7 @@ public class MainApp {
   private void printMenu() {
     System.out.println("\n================= ГЛАВНОЕ МЕНЮ =================");
 
+    // Динамическая генерация меню
     menuCommands.forEach((code, command) -> {
       System.out.println(code + ". " + command.getDescription());
     });

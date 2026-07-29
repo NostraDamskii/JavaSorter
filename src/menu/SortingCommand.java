@@ -9,16 +9,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class SortingCommand implements MenuCommand {
+public class SortingCommand extends BaseMenuCommand {
 
-  @Override
-  public int getActionCode() {
-    return 6;
-  }
-
-  @Override
-  public String getDescription() {
-    return "Меню сортировки";
+  public SortingCommand(int actionCode) {
+    super(actionCode, "Меню сортировки");
   }
 
   @Override

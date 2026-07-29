@@ -6,17 +6,11 @@ import src.fillCollections.FileFillStrategy;
 import src.fillCollections.RandomFillStrategy;
 import java.util.Scanner;
 
-public class FillStrategyCommand implements MenuCommand {
-  private final int actionCode;
-  private final String description;
+public class FillStrategyCommand extends BaseMenuCommand {
 
   public FillStrategyCommand(int actionCode, String description) {
-    this.actionCode = actionCode;
-    this.description = description;
+    super(actionCode, description);
   }
-
-  @Override public int getActionCode() { return actionCode; }
-  @Override public String getDescription() { return description; }
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
@@ -36,7 +30,7 @@ public class FillStrategyCommand implements MenuCommand {
 
     userManager.clear();
 
-    switch (actionCode) {
+    switch (getActionCode()) {
       case 1 -> userManager.setStrategy(new RandomFillStrategy(count));
       case 2 -> userManager.setStrategy(new ConsoleFillStrategy(count));
       case 3 -> {

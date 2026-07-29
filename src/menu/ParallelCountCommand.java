@@ -5,16 +5,10 @@ import src.user.User;
 import java.util.List;
 import java.util.Scanner;
 
-public class ParallelCountCommand implements MenuCommand {
+public class ParallelCountCommand extends BaseMenuCommand {
 
-  @Override
-  public int getActionCode() {
-    return 8;
-  }
-
-  @Override
-  public String getDescription() {
-    return "Многопоточный подсчет вхождений пользователя (Parallel Stream)";
+  public ParallelCountCommand(int actionCode) {
+    super(actionCode, "Многопоточный подсчет вхождений пользователя (Parallel Stream)");
   }
 
   @Override
@@ -50,12 +44,9 @@ public class ParallelCountCommand implements MenuCommand {
     System.out.println("Запуск параллельного анализа коллекции через многопоточный Stream...");
 
     long startTime = System.nanoTime();
-
-    // Высокопроизводительный встроенный подсчет через ForkJoinPool Java
     long resultCount = currentUsers.parallelStream()
         .filter(targetUser::equals)
         .count();
-
     long endTime = System.nanoTime();
 
     System.out.println("=================================================================");
