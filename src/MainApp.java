@@ -9,6 +9,7 @@ import src.sorting.EvenSorting;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import src.sorting.UserSorter;
 
 public class MainApp {
   private final Scanner scanner = new Scanner(System.in);
@@ -157,14 +158,32 @@ public class MainApp {
 
     // Конвертируем в массив для чётной сортировки (Временно либо на постоянку смотря как сделаем сортировку остальную)
     User[] arrayToSort = currentUsers.toArray(new User[0]);
-
+    UserSorter sorter = new UserSorter();
     switch (choice) {
-      case 1 -> System.out.println("Функция сортировки по имени (А-Я) пока не реализована.");
-      case 2 -> System.out.println("Функция сортировки по имени (Я-А) пока не реализована.");
-      case 3 -> System.out.println("Функция сортировки по email (А-Я) пока не реализована.");
-      case 4 -> System.out.println("Функция сортировки по email (Я-А) пока не реализована.");
-      case 5 -> System.out.println("Функция сортировки по паролю (возрастание) пока не реализована.");
-      case 6 -> System.out.println("Функция сортировки по паролю (убывание) пока не реализова");
+      case 1 -> {
+        System.out.println("Функция сортировки по имени (А-Я) пока не реализована.");
+        sorter.sort(currentUsers, UserSortStrategy.BY_NAME_ASC);
+      }
+      case 2 -> {
+        System.out.println("Функция сортировки по имени (Я-А) пока не реализована.");
+        sorter.sort(currentUsers, UserSortStrategy.BY_NAME_DESC);
+      }
+      case 3 -> {
+        System.out.println("Функция сортировки по email (А-Я) пока не реализована.");
+        sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_ASC);
+      }
+      case 4 -> {
+        System.out.println("Функция сортировки по email (Я-А) пока не реализована.");
+        sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_DESC);
+      }
+      case 5 -> {
+        System.out.println("Функция сортировки по паролю (возрастание) пока не реализована.");
+        sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_ASC);
+      }
+      case 6 -> {
+        System.out.println("Функция сортировки по паролю (убывание) пока не реализова");
+        sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_DESC);
+      }
       // Для пунктов 1-6 нужно будет добавить сохранение если доделаем
       // Четная сортировка
       case 7 -> {
