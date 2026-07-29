@@ -126,7 +126,7 @@ public class MainApp {
     User[] usersArray = currentUsers.toArray(new User[0]);
 
     // Вызываем метод записи
-    FileWrite.UsersToFile(usersArray, fileName);
+    FileWrite.usersToFile(usersArray, fileName);
   }
 
 

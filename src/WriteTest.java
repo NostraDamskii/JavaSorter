@@ -12,7 +12,11 @@ public class WriteTest {
         {
             users[i] = RandomGen.randomGenerateUser();
         }
-        FileWrite.UsersToFile(users, "users_db.txt");
+        //тест на пустые поля
+        //users[1] = null;
+        //users[3] = null;
+
+        FileWrite.usersToFile(users, "users_db.txt");
         System.out.println("Записано");
     }
 }
