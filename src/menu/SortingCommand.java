@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class SortingCommand extends BaseMenuCommand {
 
-  public SortingCommand(int actionCode) {
-    super(actionCode, "Меню сортировки");
+  public SortingCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
   }
 
   @Override

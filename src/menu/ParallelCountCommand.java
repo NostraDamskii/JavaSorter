@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class ParallelCountCommand extends BaseMenuCommand {
 
-  public ParallelCountCommand(int actionCode) {
-    super(actionCode, "Многопоточный подсчет вхождений пользователя (Parallel Stream)");
+  public ParallelCountCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
   }
 
   @Override

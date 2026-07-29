@@ -4,9 +4,9 @@ public abstract class BaseMenuCommand implements MenuCommand {
   private final int actionCode;
   private final String description;
 
-  protected BaseMenuCommand(int actionCode, String description) {
+  protected BaseMenuCommand(int actionCode, MenuConfig commandType) {
     this.actionCode = actionCode;
-    this.description = description;
+    this.description = commandType.getDescription();
   }
 
   @Override

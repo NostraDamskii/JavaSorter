@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class DisplayUsersCommand extends BaseMenuCommand {
 
-  public DisplayUsersCommand(int actionCode) {
-    super(actionCode, "Вывести полученный массив на экран");
+  public DisplayUsersCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
   }
 
   @Override

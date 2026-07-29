@@ -5,8 +5,8 @@ import src.UserManager;
 
 public class ClearCommand extends BaseMenuCommand {
 
-  public ClearCommand(int actionCode) {
-    super(actionCode, "Очистить текущий массив");
+  public ClearCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
   }
 
   @Override

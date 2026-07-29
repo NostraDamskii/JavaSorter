@@ -8,6 +8,7 @@ import src.menu.DisplayUsersCommand;
 import src.menu.ExportToFileCommand;
 import src.menu.FillStrategyCommand;
 import src.menu.MenuCommand;
+import src.menu.MenuConfig;
 import src.menu.ParallelCountCommand;
 import src.menu.SortingCommand;
 
@@ -15,19 +16,17 @@ public class MainApp {
   private final Scanner scanner = new Scanner(System.in);
   private final UserManager userManager = new UserManager();
 
-  // TreeMap гарантирует автоматическую сортировку пунктов меню по возрастанию (1, 2, 3...)
   private final Map<Integer, MenuCommand> menuCommands = new TreeMap<>();
 
   public MainApp() {
-    // Регистрация команд системы в одном месте
-    registerCommand(new FillStrategyCommand(1, "Заполнить массив случайными пользователями"));
-    registerCommand(new FillStrategyCommand(2, "Заполнить массив вручную (через консоль)"));
-    registerCommand(new FillStrategyCommand(3, "Заполнить массив из файла"));
-    registerCommand(new DisplayUsersCommand(4));
-    registerCommand(new ExportToFileCommand(5));
-    registerCommand(new SortingCommand(6));
-    registerCommand(new ClearCommand(7));
-    registerCommand(new ParallelCountCommand(8));
+    registerCommand(new FillStrategyCommand(1, MenuConfig.FILL_RANDOM));
+    registerCommand(new FillStrategyCommand(2, MenuConfig.FILL_CONSOLE));
+    registerCommand(new FillStrategyCommand(3, MenuConfig.FILL_FILE));
+    registerCommand(new DisplayUsersCommand(4, MenuConfig.DISPLAY));
+    registerCommand(new ExportToFileCommand(5, MenuConfig.EXPORT));
+    registerCommand(new SortingCommand(6, MenuConfig.SORT));
+    registerCommand(new ClearCommand(7, MenuConfig.CLEAR));
+    registerCommand(new ParallelCountCommand(8, MenuConfig.PARALLEL_COUNT));
   }
 
   private void registerCommand(MenuCommand command) {

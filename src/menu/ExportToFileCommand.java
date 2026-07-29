@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class ExportToFileCommand extends BaseMenuCommand {
 
-  public ExportToFileCommand(int actionCode) {
-    super(actionCode, "Сохранить текущий массив в файл");
+  public ExportToFileCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
   }
 
   @Override

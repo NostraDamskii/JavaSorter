@@ -5,11 +5,14 @@ import src.fillCollections.ConsoleFillStrategy;
 import src.fillCollections.FileFillStrategy;
 import src.fillCollections.RandomFillStrategy;
 import java.util.Scanner;
+import src.fillCollections.UserFillStrategy;
 
 public class FillStrategyCommand extends BaseMenuCommand {
+  private final MenuConfig choice;
 
-  public FillStrategyCommand(int actionCode, String description) {
-    super(actionCode, description);
+  public FillStrategyCommand(int actionCode, MenuConfig commandType) {
+    super(actionCode, commandType);
+    this.choice = commandType;
   }
 
   @Override
@@ -30,10 +33,10 @@ public class FillStrategyCommand extends BaseMenuCommand {
 
     userManager.clear();
 
-    switch (getActionCode()) {
-      case 1 -> userManager.setStrategy(new RandomFillStrategy(count));
-      case 2 -> userManager.setStrategy(new ConsoleFillStrategy(count));
-      case 3 -> {
+    switch (choice) {
+      case FILL_RANDOM -> userManager.setStrategy(new RandomFillStrategy(count));
+      case FILL_CONSOLE -> userManager.setStrategy(new ConsoleFillStrategy(count));
+      case FILL_FILE -> {
         System.out.print("Введите путь к файлу для чтения (например, input.txt): ");
         String filePath = scanner.nextLine();
         userManager.setStrategy(new FileFillStrategy(filePath, count));
