@@ -1,7 +1,6 @@
 package src;
-// Импорт FileWriter для открытия файла
 import src.user.User;
-
+// Импорт FileWriter для открытия файла
 import java.io.FileWriter;
 import java.io.IOException;
 //Импорт PrintWriter для удобной записи в файл.
@@ -9,7 +8,7 @@ import java.io.PrintWriter;
 public class FileWrite
 {
     // Метод UsersToFile для записи массива пользователей в файл
-    public static void UsersToFile(User[] array, String fileName)
+    public static void usersToFile(User[] array, String fileName)
     {
         // Проверяем если массива нет выходим
         if (array == null)
@@ -24,6 +23,11 @@ public class FileWrite
             for (int i = 0; i < array.length; i++)
             {
                 User user = array[i];
+                //проверка на пустые ячейки
+                if (user == null)
+                {
+                    continue;
+                }
                 // собираем строку точно в таком же формате как в parseuser
                 // порядок Имя;Пароль;Почта
                 String textLine = user.getName() + ";" + user.getPassword() + ";" + user.getEmail();

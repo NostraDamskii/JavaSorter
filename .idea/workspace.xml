@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bc29ef9-affc-42b1-af67-23561c26f52b" name="Changes" comment="add while">
+    <list default="true" id="7bc29ef9-affc-42b1-af67-23561c26f52b" name="Changes" comment="Добавил меню сортировки, добавил сеттер в user manager (для записи в файл сортированного результата), изменил в сортировке чётной нечетной пузырьковую сортировку на алгоритм вставки.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/ConsoleFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EvenSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/EvenSorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/FileFillStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hw5/.idea/Hw5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hw5/.idea/JavaSorter.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFileLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFillStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/UserFillStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserSortStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSortStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/UserSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WriteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WriteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fillCollections/RandomGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fillCollections/RandomGen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +52,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="3Grl8i6QSUuJTKOM7D5LiNd2PZZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,11 +64,14 @@
     "Application.Demonstrator.executor": "Run",
     "Application.MainApp.executor": "Run",
     "Application.RandomGen.executor": "Run",
+    "Application.SortTest.executor": "Run",
+    "Application.WriteTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Vetka",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/IdeaProjects/Aston/Hw4",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
 }]]></component>
@@ -180,7 +177,47 @@
       <option name="project" value="LOCAL" />
       <updated>1785172266341</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add while">
+      <option name="closed" value="true" />
+      <created>1785182576735</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1785182576735</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add while">
+      <option name="closed" value="true" />
+      <created>1785182692207</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1785182692207</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add while">
+      <option name="closed" value="true" />
+      <created>1785182933266</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1785182933266</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add while">
+      <option name="closed" value="true" />
+      <created>1785188744276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1785188744276</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Добавил меню сортировки, добавил сеттер в user manager (для записи в файл сортированного результата), изменил в сортировке чётной нечетной пузырьковую сортировку на алгоритм вставки.">
+      <option name="closed" value="true" />
+      <created>1785188950244</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1785188950244</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +236,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main' into Random" />
     <MESSAGE value="conflicts juniors programmer resolving" />
     <MESSAGE value="add while" />
-    <option name="LAST_COMMIT_MESSAGE" value="add while" />
+    <MESSAGE value="Добавил меню сортировки, добавил сеттер в user manager (для записи в файл сортированного результата), изменил в сортировке чётной нечетной пузырьковую сортировку на алгоритм вставки." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил меню сортировки, добавил сеттер в user manager (для записи в файл сортированного результата), изменил в сортировке чётной нечетной пузырьковую сортировку на алгоритм вставки." />
   </component>
 </project>
