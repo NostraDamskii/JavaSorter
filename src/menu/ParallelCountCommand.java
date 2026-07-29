@@ -1,0 +1,68 @@
+package src.menu;
+
+import src.UserManager;
+import src.user.User;
+import java.util.List;
+import java.util.Scanner;
+
+public class ParallelCountCommand implements MenuCommand {
+
+  @Override
+  public int getActionCode() {
+    return 8;
+  }
+
+  @Override
+  public String getDescription() {
+    return "Многопоточный подсчет вхождений пользователя (Parallel Stream)";
+  }
+
+  @Override
+  public void execute(Scanner scanner, UserManager userManager) {
+    List<User> currentUsers = userManager.getUsers();
+    if (currentUsers == null || currentUsers.isEmpty()) {
+      System.out.println("Список пользователей пуст. Заполните его!");
+      return;
+    }
+
+    System.out.println("\n--- Введите данные пользователя для подсчета вхождений ---");
+    System.out.print("Введите имя: ");
+    String name = scanner.nextLine();
+
+    System.out.print("Введите email: ");
+    String email = scanner.nextLine();
+
+    System.out.print("Введите пароль (число): ");
+    while (!scanner.hasNextInt()) {
+      System.out.println("Ошибка: Пароль должен быть целым числом!");
+      System.out.print("Введите пароль (число): ");
+      scanner.nextLine();
+    }
+    int password = scanner.nextInt();
+    scanner.nextLine();
+
+    User targetUser = new User.Builder()
+        .name(name)
+        .email(email)
+        .password(password)
+        .build();
+
+    System.out.println("Запуск параллельного анализа коллекции через многопоточный Stream...");
+
+    long startTime = System.nanoTime();
+
+    // Высокопроизводительный встроенный подсчет через ForkJoinPool Java
+    long resultCount = currentUsers.parallelStream()
+        .filter(targetUser::equals)
+        .count();
+
+    long endTime = System.nanoTime();
+
+    System.out.println("=================================================================");
+    System.out.printf(" РЕЗУЛЬТАТ МНОГОПОТОЧНОГО ПОДСЧЕТА:%n");
+    System.out.printf(" Искомый объект   : %s%n", targetUser);
+    System.out.printf(" Найдено вхождений: %d%n", resultCount);
+    System.out.printf(" Время обработки  : %,d нс%n", (endTime - startTime));
+    System.out.println("=================================================================");
+  }
+}

@@ -1,4 +1,4 @@
-package src.user;
+package src;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
