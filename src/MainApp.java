@@ -69,7 +69,6 @@ public class MainApp {
   private void printMenu() {
     System.out.println("\n================= ГЛАВНОЕ МЕНЮ =================");
 
-    // Динамическая генерация меню
     menuCommands.forEach((code, command) -> {
       System.out.println(code + ". " + command.getDescription());
     });
