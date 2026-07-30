@@ -1,68 +1,64 @@
 package src.sorting;
 
+import src.CustomLinkedList;
 import src.user.User;
 
 public class EvenSorting {
 
-    public static void sortByEvenPassword(User[] array) {
-        // Проверяем если массива нет или в нём мало элементов
-        if (array == null || array.length < 2) {
+    public static void sortByEvenPassword(CustomLinkedList<User> list) {
+        // Проверяем, если списка нет или в нём мало элементов
+        if (list == null || list.size() < 2) {
             return;
         }
+
         // Подсчёт сколько чётных пользователей
         int evenCount = 0;
-        for (int i = 0; i < array.length; i++)
-        {
-            if (array[i].getPassword() % 2 == 0)
-            {
-                evenCount++; // Запоминаем каждого чётного пользователя
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getPassword() % 2 == 0) {
+                evenCount++;
             }
         }
-        // Если чётных элементов массива нет или он 1 завершаем метод
+
+        // Если чётных элементов меньше двух, сортировать нечего
         if (evenCount < 2) {
             return;
         }
-        // Создаем массив для чётных пользователей, обычный массив фиксированной длины под количество чётных пользователей
-        User[] evenUsers = new User[evenCount];
-        int index = 0; // Индекс для заполнения нового массива
 
-        for (int i = 0; i < array.length; i++) {
-            // Оператор % возвращает остаток от деления. Если число чётное, остаток всегда равен 0
-            if (array[i].getPassword() % 2 == 0) {
-                evenUsers[index] = array[i]; // Копируем чётного пользователя если остаток 0
-                index++;                     // Сдвигаем индекс для следующего
+        // Создаем временный кастомный список исключительно для чётных пользователей
+        CustomLinkedList<User> evenUsers = new CustomLinkedList<>();
+        for (int i = 0; i < list.size(); i++) {
+            User user = list.get(i);
+            if (user.getPassword() % 2 == 0) {
+                evenUsers.add(user);
             }
         }
-        // Сортируем массив чётных пользователей
-        // Сортировка вставками, (лучше пузырька который был до этого), обьясняю как работает.
-        // Цикл берёт элементы по очереди начиная с индекса 1.
-        for (int i = 1; i < evenUsers.length; i++)
-        {
-            User current = evenUsers[i]; // Запоминаем текущего пользователя для вставки во временную переменную current
-            int j = i - 1; // берем левый элемент от i
 
-            // Выборка идёт слева на право цикл for, а сортировка цикл while идёт справа налево, и останавливается если элемент отсортировался
-            // (т.е. встал в правильную позицию учитывая всё что уже отсортировано слева)
-            // Всё что слева уже отсортировано
-            // пока левый элемент j больше либо равен 0, и пароль левого пользователя больше чем пароль правого (текущего)
-            while (j >= 0 && evenUsers[j].getPassword() > current.getPassword())
-            {
-                evenUsers[j + 1] = evenUsers[j]; // копируем элемент слева на элемент справа (Т.е. если был массив пароль 200 и 100 то стал 200 и 200)
-                j--; // Идем дальше влево. Если взять индексы 0 и 1, то цикл завершится поскольку j=-1
+        // Сортировка вставками внутри кастомного списка чётных пользователей
+        for (int i = 1; i < evenUsers.size(); i++) {
+            User current = evenUsers.get(i);
+            int j = i - 1;
+
+            // Ищем правильную позицию для текущего элемента
+            while (j >= 0 && evenUsers.get(j).getPassword() > current.getPassword()) {
+                j--;
             }
-            // Теперь вставляем то что было справа налево, если взять индексы 0 и 1 то сейчас j= -1, а поскольку цикл for начался с i=1 то запомнили мы именно 100.
-            evenUsers[j + 1] = current; // j = -1 + 1 = 0 (Т.е. вставляем 100 на индекс 0)
+
+            // Перемещаем элемент на его новую позицию
+            evenUsers.remove(i);
+            evenUsers.insert(j + 1, current);
         }
-        // Заполняем отсортированных пользователей обратно
-        int counter = 0; // Счётчик который будет по порядку брать людей из evenUsers
-        for (int i = 0; i < array.length; i++)
-        {
-            // Проверка если в исходном массиве на этом месте стоял чётный пользователь
-            if (array[i] != null && array[i].getPassword() % 2 == 0)
-            {
-                // заменяем на отсортированного из текущего массива
-                array[i] = evenUsers[counter];
-                counter++; // переход к следующему отсортированному пользователю
+
+        // Возвращаем отсортированных чётных пользователей обратно в исходный список
+        int counter = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getPassword() % 2 == 0) {
+                User sortedUser = evenUsers.get(counter);
+
+                // Заменяем старый элемент на новый отсортированный
+                list.remove(i);
+                list.insert(i, sortedUser);
+
+                counter++;
             }
         }
     }

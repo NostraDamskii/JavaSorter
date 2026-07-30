@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-  private List<User> users = new ArrayList<>();
+  private CustomLinkedList<User> users = new CustomLinkedList<>();
   private UserFillStrategy strategy;
 
   public void setStrategy(UserFillStrategy strategy) {
@@ -20,8 +20,8 @@ public class UserManager {
     }
     strategy.fill(users);
   }
-  // Добавил сеттер юзеров что бы сделать запись в файл с результатами сортировки, убрал модификатор final с поля List<user>
-  public void setUsers(List<User> users) {
+
+  public void setUsers(CustomLinkedList<User> users) {
     this.users = users;
   }
 
@@ -29,7 +29,7 @@ public class UserManager {
     users.clear();
   }
 
-  public List<User> getUsers() {
+  public CustomLinkedList<User> getUsers() {
     return users;
   }
 }

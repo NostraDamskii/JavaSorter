@@ -9,6 +9,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import src.user.User;
+import src.CustomLinkedList;
+import java.util.Scanner;
+
 public class SortingCommand extends BaseMenuCommand {
 
   public SortingCommand(int actionCode, MenuConfig commandType) {
@@ -17,7 +21,7 @@ public class SortingCommand extends BaseMenuCommand {
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
-    List<User> currentUsers = userManager.getUsers();
+    CustomLinkedList<User> currentUsers = userManager.getUsers();
     if (currentUsers == null || currentUsers.isEmpty()) {
       System.out.println("Ошибка: Массив пуст. Нечего сортировать.");
       return;
@@ -42,38 +46,37 @@ public class SortingCommand extends BaseMenuCommand {
 
     if (choice == 8) return;
 
-    User[] arrayToSort = currentUsers.toArray(new User[0]);
     UserSorter sorter = new UserSorter();
 
     switch (choice) {
       case 1 -> {
         System.out.println("Выполняется сортировка по имени (А-Я)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_NAME_ASC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_NAME_ASC));
       }
       case 2 -> {
         System.out.println("Выполняется сортировка по имени (Я-А)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_NAME_DESC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_NAME_DESC));
       }
       case 3 -> {
         System.out.println("Выполняется сортировка по email (А-Я)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_ASC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_ASC));
       }
       case 4 -> {
         System.out.println("Выполняется сортировка по email (Я-А)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_DESC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_EMAIL_DESC));
       }
       case 5 -> {
         System.out.println("Выполняется сортировка по паролю (возрастание)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_ASC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_ASC));
       }
       case 6 -> {
         System.out.println("Выполняется сортировка по паролю (убывание)...");
-        sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_DESC);
+        userManager.setUsers(sorter.sort(currentUsers, UserSortStrategy.BY_PASSWORD_DESC));
       }
       case 7 -> {
         System.out.println("Выполняется чётная сортировка...");
-        EvenSorting.sortByEvenPassword(arrayToSort);
-        userManager.setUsers(Arrays.asList(arrayToSort));
+        // Передаем кастомный список напрямую в обновленный метод
+        EvenSorting.sortByEvenPassword(currentUsers);
       }
       default -> {
         System.out.println("Неверный выбор.");

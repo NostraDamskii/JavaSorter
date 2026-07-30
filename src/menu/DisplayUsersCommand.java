@@ -1,5 +1,6 @@
 package src.menu;
 
+import src.CustomLinkedList;
 import src.UserManager;
 import src.user.User;
 import java.util.List;
@@ -14,9 +15,9 @@ public class DisplayUsersCommand extends BaseMenuCommand {
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
     System.out.println("\n--- ТЕКУЩИЙ МАССИВ ПОЛЬЗОВАТЕЛЕЙ ---");
-    List<User> currentUsers = userManager.getUsers();
+    CustomLinkedList<User> currentUsers = userManager.getUsers();
 
-    if (currentUsers.isEmpty()) {
+    if (currentUsers.size() == 0) {
       System.out.println("Ошибка: Массив пуст. Сначала заполните его (пункты 1-3).");
       return;
     }

@@ -1,5 +1,6 @@
 package src.menu;
 
+import src.CustomLinkedList;
 import src.UserManager;
 import src.user.User;
 import src.FileWrite;
@@ -14,8 +15,8 @@ public class ExportToFileCommand extends BaseMenuCommand {
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
-    List<User> currentUsers = userManager.getUsers();
-    if (currentUsers == null || currentUsers.isEmpty()) {
+    CustomLinkedList<User> currentUsers = userManager.getUsers();
+    if (currentUsers == null || currentUsers.size() == 0) {
       System.out.println("Ошибка: Массив пуст. Нечего сохранять.");
       return;
     }
@@ -28,7 +29,11 @@ public class ExportToFileCommand extends BaseMenuCommand {
       return;
     }
 
-    User[] usersArray = currentUsers.toArray(new User[0]);
+    User[] usersArray = new User[currentUsers.size()];
+    for (int i = 0; i < currentUsers.size(); i++) {
+      usersArray[i] = currentUsers.get(i);
+    }
+
     FileWrite.usersToFile(usersArray, fileName);
   }
 }

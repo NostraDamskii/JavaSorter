@@ -1,5 +1,6 @@
 package src.fillCollections;
 
+import src.CustomLinkedList;
 import src.user.User;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class RandomFillStrategy implements UserFillStrategy {
   }
 
   @Override
-  public void fill(List<User> users) {
+  public void fill(CustomLinkedList<User> users) {
     for (int i = 0; i < count; i++) {
       users.add(RandomGen.randomGenerateUser());
     }

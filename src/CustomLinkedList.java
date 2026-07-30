@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Collection;
 import java.util.Spliterator;
+import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -26,6 +27,10 @@ public class CustomLinkedList<T> implements Iterable<T> {
     this.size = 0;
   }
 
+  public Stream<T> stream() {
+    return StreamSupport.stream(new LinkedListSpliterator<>(head, size), false);
+  }
+
   public CustomLinkedList(Collection<? extends T> collection) {
     if (collection == null) {
       throw new IllegalArgumentException("Исходная коллекция не может быть null");
@@ -35,6 +40,10 @@ public class CustomLinkedList<T> implements Iterable<T> {
     for (T item : collection) {
       this.add(item);
     }
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
   }
 
   public void add(T data) {
@@ -147,22 +156,20 @@ public class CustomLinkedList<T> implements Iterable<T> {
       }
 
       int mid = estSize / 2;
-      Node<T> startNode = current;
-      Node<T> midNode = current;
+      Object[] a = new Object[mid];
 
-      for (int i = 0; i < mid && midNode != null; i++) {
-        midNode = midNode.next;
+      for (int i = 0; i < mid && current != null; i++) {
+        a[i] = current.data;
+        current = current.next;
+        estSize--;
       }
 
-      Spliterator<T> prefix = new LinkedListSpliterator<>(startNode, mid);
-      this.current = midNode;
-      this.estSize -= mid;
-
-      return prefix;
+      return Spliterators.spliterator(a, 0, mid, ORDERED | SIZED | SUBSIZED);
     }
 
     @Override
     public boolean tryAdvance(java.util.function.Consumer<? super T> action) {
+      if (action == null) throw new NullPointerException();
       if (current != null && estSize > 0) {
         action.accept(current.data);
         current = current.next;
@@ -173,9 +180,13 @@ public class CustomLinkedList<T> implements Iterable<T> {
     }
 
     @Override
-    public long estimateSize() { return estSize; }
+    public long estimateSize() {
+      return estSize;
+    }
 
     @Override
-    public int characteristics() { return SIZED | ORDERED | SUBSIZED; }
+    public int characteristics() {
+      return SIZED | ORDERED | SUBSIZED;
+    }
   }
 }

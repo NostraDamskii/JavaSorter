@@ -3,20 +3,25 @@ package src;
 import src.fillCollections.RandomGen;
 import src.user.User;
 
+import src.user.User;
+import src.CustomLinkedList;
+
 public class WriteTest {
 
     public static void main(String[] args)
     {
-        User[] users = new User[5];
-        for (int i = 0; i < users.length; i++)
+        CustomLinkedList<User> users = new CustomLinkedList<>();
+        for (int i = 0; i < 5; i++)
         {
-            users[i] = RandomGen.randomGenerateUser();
+            users.add(RandomGen.randomGenerateUser());
         }
-        //тест на пустые поля
-        //users[1] = null;
-        //users[3] = null;
 
-        FileWrite.usersToFile(users, "users_db.txt");
+        User[] usersArray = new User[users.size()];
+        for (int i = 0; i < users.size(); i++) {
+            usersArray[i] = users.get(i);
+        }
+
+        FileWrite.usersToFile(usersArray, "users_db.txt");
         System.out.println("Записано");
     }
 }

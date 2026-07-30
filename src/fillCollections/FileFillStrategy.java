@@ -1,5 +1,6 @@
 package src.fillCollections;
 
+import src.CustomLinkedList;
 import src.user.User;
 
 import java.io.BufferedReader;
@@ -8,6 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class FileFillStrategy implements UserFillStrategy {
+
   private final String filePath;
   private final int count;
 
@@ -17,7 +19,7 @@ public class FileFillStrategy implements UserFillStrategy {
   }
 
   @Override
-  public void fill(List<User> users) {
+  public void fill(CustomLinkedList<User> users) { // Заменено на CustomLinkedList<User>
     int added = 0;
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
       String line;
@@ -54,11 +56,11 @@ public class FileFillStrategy implements UserFillStrategy {
       throw new IllegalArgumentException("Имя пользователя не может быть пустым");
     }
 
-    String strpassword = parts[1].trim();
-    if (strpassword.isEmpty()) {
+    String strPassword = parts[1].trim();
+    if (strPassword.isEmpty()) {
       throw new IllegalArgumentException("Пароль пользователя не может быть пустым");
     }
-    int password = Integer.parseInt(strpassword);
+    int password = Integer.parseInt(strPassword);
 
     String mail = parts[2].trim();
     if (mail.isEmpty()) {
