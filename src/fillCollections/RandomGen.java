@@ -1,4 +1,5 @@
 package src.fillCollections;
+import src.CustomLinkedList;
 import src.user.User;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -23,7 +24,7 @@ public class RandomGen
         // Возвращаем пользователя со случайными данными
         return new User.Builder().name(name).email(email).password(password).build();
     }
-        // Простой метод для проверки кода
+        /* Простой метод для проверки кода
     public static void main(String[] args)
     {
         User testUser = randomGenerateUser();
@@ -32,4 +33,5 @@ public class RandomGen
         System.out.println("email: " + testUser.getEmail());
         System.out.println("пароль: " + testUser.getPassword());
     }
+         */
 }
