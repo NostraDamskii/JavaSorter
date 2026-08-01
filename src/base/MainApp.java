@@ -50,7 +50,6 @@ public class MainApp {
 
       int choice = scanner.nextInt();
       scanner.nextLine();
-
       if (choice == 0) {
         System.out.println("Программа завершена. До свидания!");
         scanner.close();
