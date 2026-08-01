@@ -1,16 +1,16 @@
-package src;
+package base;
 
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Scanner;
-import src.menu.ClearCommand;
-import src.menu.DisplayUsersCommand;
-import src.menu.ExportToFileCommand;
-import src.menu.FillStrategyCommand;
-import src.menu.MenuCommand;
-import src.menu.MenuConfig;
-import src.menu.ParallelCountCommand;
-import src.menu.SortingCommand;
+import menu.ClearCommand;
+import menu.DisplayUsersCommand;
+import menu.ExportToFileCommand;
+import menu.FillStrategyCommand;
+import menu.MenuCommand;
+import menu.MenuConfig;
+import menu.ParallelCountCommand;
+import menu.SortingCommand;
 
 public class MainApp {
   private final Scanner scanner = new Scanner(System.in);

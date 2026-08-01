@@ -1,11 +1,11 @@
-package src.menu;
+package menu;
 
-import src.UserManager;
-import src.fillCollections.ConsoleFillStrategy;
-import src.fillCollections.FileFillStrategy;
-import src.fillCollections.RandomFillStrategy;
+import base.UserManager;
+import fillCollections.ConsoleFillStrategy;
+import fillCollections.FileFillStrategy;
+import fillCollections.RandomFillStrategy;
 import java.util.Scanner;
-import src.fillCollections.UserFillStrategy;
+import fillCollections.UserFillStrategy;
 
 public class FillStrategyCommand extends BaseMenuCommand {
   private final MenuConfig choice;

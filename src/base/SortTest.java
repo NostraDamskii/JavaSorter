@@ -1,8 +1,8 @@
-package src;
+package base;
 
-import src.fillCollections.RandomGen;
-import src.sorting.EvenSorting;
-import src.user.User;
+import fillCollections.RandomGen;
+import sorting.EvenSorting;
+import user.User;
 
 // Класс проверки чётной сортировки
 public class SortTest {

@@ -1,4 +1,4 @@
-package src.menu;
+package menu;
 
 public enum MenuConfig {
   FILL_RANDOM("Заполнить массив случайными пользователями"),

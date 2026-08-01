@@ -1,16 +1,15 @@
-package src.menu;
+package menu;
 
-import src.UserManager;
-import src.user.User;
-import src.sorting.UserSorter;
-import src.sorting.UserSortStrategy;
-import src.sorting.EvenSorting;
+import base.CustomLinkedList;
+import base.UserManager;
+import user.User;
+import sorting.UserSorter;
+import sorting.UserSortStrategy;
+import sorting.EvenSorting;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import src.user.User;
-import src.CustomLinkedList;
 import java.util.Scanner;
 
 public class SortingCommand extends BaseMenuCommand {

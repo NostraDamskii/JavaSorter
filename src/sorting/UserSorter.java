@@ -1,14 +1,7 @@
-package src.sorting;
+package sorting;
 
-import src.CustomLinkedList;
-import src.user.User;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import src.user.User;
-import src.CustomLinkedList;
+import base.CustomLinkedList;
+import user.User;
 
 public class UserSorter {
     public CustomLinkedList<User> sort(CustomLinkedList<User> users, UserSortStrategy strategy) {

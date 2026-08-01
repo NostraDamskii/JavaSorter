@@ -1,7 +1,7 @@
-package src.menu;
+package menu;
 
 import java.util.Scanner;
-import src.UserManager;
+import base.UserManager;
 
 public interface MenuCommand {
 

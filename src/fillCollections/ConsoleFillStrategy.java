@@ -1,7 +1,7 @@
-package src.fillCollections;
+package fillCollections;
 
-import src.CustomLinkedList;
-import src.user.User;
+import base.CustomLinkedList;
+import user.User;
 
 import java.util.Scanner;
 

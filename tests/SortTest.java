@@ -1,18 +1,21 @@
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import base.CustomLinkedList;
+
 import org.junit.jupiter.api.Test;
-import CustomLinkedList;
 import sorting.UserSortStrategy;
 import sorting.UserSorter;
 import user.User;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class SortTest {
 
 
     @Test
-    public void unsortedCollectionSortTest(){
+    protected void unsortedCollectionSortTest(){
         CustomLinkedList<User> unsortedList =new CustomLinkedList<>();
 
 

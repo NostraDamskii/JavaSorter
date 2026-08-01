@@ -1,10 +1,7 @@
-package src;
+package base;
 
-import src.fillCollections.RandomGen;
-import src.user.User;
-
-import src.user.User;
-import src.CustomLinkedList;
+import fillCollections.RandomGen;
+import user.User;
 
 public class WriteTest {
 

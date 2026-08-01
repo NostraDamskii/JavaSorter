@@ -1,10 +1,7 @@
-package src;
+package base;
 
-import src.fillCollections.UserFillStrategy;
-import src.user.User;
-
-import java.util.ArrayList;
-import java.util.List;
+import fillCollections.UserFillStrategy;
+import user.User;
 
 public class UserManager {
   private CustomLinkedList<User> users = new CustomLinkedList<>();

@@ -1,7 +1,7 @@
-package src.sorting;
+package sorting;
 
-import src.CustomLinkedList;
-import src.user.User;
+import base.CustomLinkedList;
+import user.User;
 
 public class EvenSorting {
 

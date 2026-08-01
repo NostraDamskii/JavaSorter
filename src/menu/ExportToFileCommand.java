@@ -1,9 +1,11 @@
-package src.menu;
+package menu;
 
-import src.CustomLinkedList;
-import src.UserManager;
-import src.user.User;
-import src.FileWrite;
+
+import base.CustomLinkedList;
+import base.FileWrite;
+import base.UserManager;
+import user.User;
+
 import java.util.List;
 import java.util.Scanner;
 

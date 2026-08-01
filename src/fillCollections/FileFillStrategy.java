@@ -1,7 +1,7 @@
-package src.fillCollections;
+package fillCollections;
 
-import src.CustomLinkedList;
-import src.user.User;
+import base.CustomLinkedList;
+import user.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,7 +19,7 @@ public class FileFillStrategy implements UserFillStrategy {
   }
 
   @Override
-  public void fill(CustomLinkedList<User> users) { // Заменено на CustomLinkedList<User>
+  public void fill(CustomLinkedList<User> users) { // Заменено на base.CustomLinkedList<User>
     int added = 0;
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
       String line;

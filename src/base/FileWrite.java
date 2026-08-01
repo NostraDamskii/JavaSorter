@@ -1,5 +1,6 @@
-package src;
-import src.user.User;
+package base;
+
+import user.User;
 // Импорт FileWriter для открытия файла
 import java.io.FileWriter;
 import java.io.IOException;
