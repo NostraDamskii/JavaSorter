@@ -54,21 +54,21 @@ class CustomLinkedListTest {
         Assertions.assertEquals("в", list.get(1), "элемент в должен сдвинуться на место удаленного б");
     }
 
-    // тестируем защиту от некорректных индексов IndexOutOfBoundsException
+    // тестируем защиту от некорректных индексов
     @Test
     void testIndexOutOfBoundsException() {
         CustomLinkedList<String> list = new CustomLinkedList<>();
         list.add("тест");
 
-        // пытаемся взять элемент с несуществующим индексом должно вылететь исключение
+        // пытаемся взять элемент с несуществующим индексом
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
             list.get(5);
-        }, "программа должна выдать IndexOutOfBoundsException при выходе за границы списка");
+        }, "IndexOutOfBoundsException при выходе за границы списка");
 
-        // пытаемся удалить элемент с отрицательным индексом должно вылететь исключение
+        // пытаемся удалить элемент с отрицательным
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
             list.remove(-1);
-        }, "программа должна выдать IndexOutOfBoundsException при отрицательном индексе");
+        }, "IndexOutOfBoundsException при отрицательном индексе");
     }
 
     // 5. тестируем работу цикла for
@@ -79,7 +79,7 @@ class CustomLinkedListTest {
         list.add(2);
 
         int sum = 0;
-        // проверяем что по коллекции теперь можно безопасно бегать циклом
+
         for (Integer num : list) {
             sum += num;
         }

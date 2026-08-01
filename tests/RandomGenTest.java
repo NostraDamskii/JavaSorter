@@ -35,6 +35,6 @@ class RandomGenTest {
         // проверка пароля на соответствие
         int password = user.getPassword();
         Assertions.assertTrue(password >= 100000 && password < 999999,
-                "пароль должен быть строго 6-значным (от 100000 до 999998) текущий пароль: " + password);
+                "пароль должен быть 6-значным (от 100000 до 999998) текущий пароль: " + password);
     }
 }

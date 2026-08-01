@@ -7,11 +7,10 @@ class UserManagerTest {
 
     @org.junit.jupiter.api.Test
     void populateUsers() {
-        // создаем менеджер пользователей
+        // менеджер пользователей
         UserManager manager = new UserManager();
-
         // проверяем что метод выбрасывает ошибку IllegalStateException
-        // так как мы не установили стратегию (она сейчас равна null)
+        // стратегия  null
         Assertions.assertThrows(IllegalStateException.class, () -> {
             manager.populateUsers();
         }, "Метод должен упасть с ошибкой так как стратегия заполнения null");
@@ -28,10 +27,10 @@ class UserManagerTest {
         //вызываем метод очистки для тестирования
         manager.clear();
 
-        // проверка результата после clear() размер списка должен стать ровно 0
+        // проверка результата после clear() размер списка должен стать 0
         int expectedSize = 0;
         int actualSize = manager.getUsers().size();
 
-        Assertions.assertEquals(expectedSize, actualSize, "После вызова clear() список пользователей должен быть пустым");
+        Assertions.assertEquals(expectedSize, actualSize, "После вызова clear() список пользователей пуст");
     }
 }

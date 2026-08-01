@@ -23,7 +23,7 @@ class FileWriteTest {
             file.delete();
         }
 
-        // создаем массив пользователей в котором дыры (null) — логику
+        // создаем массив пользователей в котором есть пропуски null
         User[] users = new User[4];
         users[0] = new User.Builder().name("Василий").password(123456).email("vas@mail.ru").build();
         users[1] = null; // эту ячейку код должен пропустить
@@ -41,7 +41,7 @@ class FileWriteTest {
         List<String> lines = Files.readAllLines(Path.of(TEST_FILE));
         Assertions.assertEquals(2, lines.size(), "в файле должно быть ровно 2 строки так как null-элементы должны быть пропущены");
 
-        // проверка 2: проверяем правильность формата записи первой строки
+        // проверка 2 правильность формата записи первой строки
         String expectedFirstLine = "Василий;123456;vas@mail.ru";
         Assertions.assertEquals(expectedFirstLine, lines.get(0), "формат записи первой строки не совпадает с ожидаемым");
 
@@ -51,13 +51,12 @@ class FileWriteTest {
 
     @Test
     void usersToFileWithNullArray() {
-        // проверяем самую первую строчку метода if (array == null) return
-        // программа не должна упасть с NullPointerException
+        // проверяем первую строку метода if (array == null) return
         Assertions.assertDoesNotThrow(() -> {
             FileWrite.usersToFile(null, "should_not_exist.txt");
         }, "метод упал с ошибкой при передаче null вместо массива");
 
-        // дополнительно проверяем что файл не создался
+        // проверка что файл не создался
         File file = new File("should_not_exist.txt");
         Assertions.assertFalse(file.exists(), "файл не должен создаваться если передан null");
     }
