@@ -1,15 +1,15 @@
-package tests;
 
+import base.FileWrite;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import src.FileWrite;
-import src.user.User;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import user.User;
 
 class FileWriteTest {
 

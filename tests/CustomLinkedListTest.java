@@ -1,8 +1,8 @@
 package tests;
 
+import base.CustomLinkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import src.CustomLinkedList;
 
 
 class CustomLinkedListTest {
