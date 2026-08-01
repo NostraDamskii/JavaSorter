@@ -1,7 +1,8 @@
-package base;
+package service;
 
-import fillCollections.UserFillStrategy;
-import user.User;
+import base.CustomLinkedList;
+import dataFill.UserFillStrategy;
+import core.User;
 
 public class UserManager {
   private CustomLinkedList<User> users = new CustomLinkedList<>();

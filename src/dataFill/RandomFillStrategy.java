@@ -1,9 +1,7 @@
-package fillCollections;
+package dataFill;
 
 import base.CustomLinkedList;
-import user.User;
-
-import java.util.List;
+import core.User;
 
 public class RandomFillStrategy implements UserFillStrategy {
   private final int count;

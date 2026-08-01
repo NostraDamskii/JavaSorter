@@ -1,9 +1,8 @@
 package menu;
 
 import base.CustomLinkedList;
-import base.UserManager;
-import user.User;
-import java.util.List;
+import service.UserManager;
+import core.User;
 import java.util.Scanner;
 
 public class DisplayUsersCommand extends BaseMenuCommand {

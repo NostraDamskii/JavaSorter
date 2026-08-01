@@ -7,7 +7,7 @@ import base.CustomLinkedList;
 import org.junit.jupiter.api.Test;
 import sorting.UserSortStrategy;
 import sorting.UserSorter;
-import user.User;
+import core.User;
 
 
 

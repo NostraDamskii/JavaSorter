@@ -1,4 +1,4 @@
-package user;
+package core;
 
 public class User {
   private final String name;

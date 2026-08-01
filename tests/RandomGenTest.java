@@ -1,11 +1,11 @@
 
-import fillCollections.RandomGen;
+import dataFill.RandomGen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import user.User;
+import core.User;
 
 class RandomGenTest {
 

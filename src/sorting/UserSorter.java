@@ -1,7 +1,7 @@
 package sorting;
 
 import base.CustomLinkedList;
-import user.User;
+import core.User;
 
 public class UserSorter {
     public CustomLinkedList<User> sort(CustomLinkedList<User> users, UserSortStrategy strategy) {

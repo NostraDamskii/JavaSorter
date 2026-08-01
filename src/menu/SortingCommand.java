@@ -1,15 +1,11 @@
 package menu;
 
 import base.CustomLinkedList;
-import base.UserManager;
-import user.User;
+import service.UserManager;
+import core.User;
 import sorting.UserSorter;
 import sorting.UserSortStrategy;
 import sorting.EvenSorting;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 import java.util.Scanner;
 
 public class SortingCommand extends BaseMenuCommand {

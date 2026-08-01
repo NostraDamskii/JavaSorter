@@ -2,11 +2,10 @@ package menu;
 
 
 import base.CustomLinkedList;
-import base.FileWrite;
-import base.UserManager;
-import user.User;
+import service.FileWrite;
+import service.UserManager;
+import core.User;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class ExportToFileCommand extends BaseMenuCommand {

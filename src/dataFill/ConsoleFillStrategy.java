@@ -1,7 +1,7 @@
-package fillCollections;
+package dataFill;
 
 import base.CustomLinkedList;
-import user.User;
+import core.User;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
 
-import base.FileWrite;
+import service.FileWrite;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import user.User;
+import core.User;
 
 class FileWriteTest {
 

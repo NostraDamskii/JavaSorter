@@ -1,5 +1,5 @@
-package fillCollections;
-import user.User;
+package dataFill;
+import core.User;
 
 import java.util.concurrent.ThreadLocalRandom;
 

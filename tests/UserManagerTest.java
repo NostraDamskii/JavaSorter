@@ -1,7 +1,7 @@
 package tests;
-import base.UserManager;
+import service.UserManager;
 import org.junit.jupiter.api.Assertions;
-import user.User;
+import core.User;
 
 class UserManagerTest {
 

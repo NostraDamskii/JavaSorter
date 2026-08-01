@@ -1,8 +1,8 @@
 package base;
 
-import fillCollections.RandomGen;
+import dataFill.RandomGen;
 import sorting.EvenSorting;
-import user.User;
+import core.User;
 
 // Класс проверки чётной сортировки
 public class SortTest {

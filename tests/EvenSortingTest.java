@@ -4,7 +4,7 @@ import base.CustomLinkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sorting.EvenSorting;
-import user.User;
+import core.User;
 
 
 class EvenSortingTest

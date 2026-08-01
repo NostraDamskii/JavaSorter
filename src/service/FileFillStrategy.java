@@ -1,12 +1,12 @@
-package fillCollections;
+package service;
 
 import base.CustomLinkedList;
-import user.User;
+import dataFill.UserFillStrategy;
+import core.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 
 public class FileFillStrategy implements UserFillStrategy {
 

@@ -1,5 +1,3 @@
-package base;
-
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Scanner;
@@ -11,6 +9,7 @@ import menu.MenuCommand;
 import menu.MenuConfig;
 import menu.ParallelCountCommand;
 import menu.SortingCommand;
+import service.UserManager;
 
 public class MainApp {
   private final Scanner scanner = new Scanner(System.in);

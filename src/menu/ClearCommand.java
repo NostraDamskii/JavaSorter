@@ -1,6 +1,6 @@
 package menu;
 
-import base.UserManager;
+import service.UserManager;
 import java.util.Scanner;
 
 public class ClearCommand extends BaseMenuCommand {

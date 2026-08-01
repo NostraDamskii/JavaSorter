@@ -1,6 +1,6 @@
-package base;
+package service;
 
-import user.User;
+import core.User;
 // Импорт FileWriter для открытия файла
 import java.io.FileWriter;
 import java.io.IOException;

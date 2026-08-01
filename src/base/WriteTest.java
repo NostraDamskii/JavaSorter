@@ -1,7 +1,8 @@
 package base;
 
-import fillCollections.RandomGen;
-import user.User;
+import dataFill.RandomGen;
+import service.FileWrite;
+import core.User;
 
 public class WriteTest {
 
