@@ -1,4 +1,4 @@
-package src.menu;
+package menu;
 
 public abstract class BaseMenuCommand implements MenuCommand {
   private final int actionCode;

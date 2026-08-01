@@ -1,7 +1,7 @@
-package src.sorting;
+package sorting;
 
-import src.CustomLinkedList;
-import src.user.User;
+import customCollection.CustomLinkedList;
+import user.User;
 
 public class EvenSorting
 {
@@ -50,7 +50,7 @@ public class EvenSorting
         manualQuickSort(evenArray, 0, evenArray.length - 1);
 
         // создаем новый кастомный список для сборки итогового результата
-        CustomLinkedList<User> resultList = new CustomLinkedList<>();
+        customCollection.CustomLinkedList<User> resultList = new CustomLinkedList<>();
         int evenCounter = 0;
 
         // проход по исходному списку и расставляем элементы на свои места

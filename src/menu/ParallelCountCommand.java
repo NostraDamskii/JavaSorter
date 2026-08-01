@@ -1,9 +1,8 @@
-package src.menu;
+package menu;
 
-import src.CustomLinkedList;
-import src.UserManager;
-import src.user.User;
-import java.util.List;
+import user.User;
+import user.UserManager;
+
 import java.util.Scanner;
 
 public class ParallelCountCommand extends BaseMenuCommand {
@@ -14,7 +13,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
-    CustomLinkedList<User> currentUsers = userManager.getUsers();
+    customCollection.CustomLinkedList<User> currentUsers = userManager.getUsers();
     if (currentUsers == null || currentUsers.size() == 0) {
       System.out.println("Список пользователей пуст. Заполните его!");
       return;

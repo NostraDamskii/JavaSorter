@@ -1,16 +1,11 @@
-package src.menu;
+package menu;
 
-import src.UserManager;
-import src.user.User;
-import src.sorting.UserSorter;
-import src.sorting.UserSortStrategy;
-import src.sorting.EvenSorting;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import sorting.EvenSorting;
+import sorting.UserSortStrategy;
+import sorting.UserSorter;
+import user.User;
+import user.UserManager;
 
-import src.user.User;
-import src.CustomLinkedList;
 import java.util.Scanner;
 
 public class SortingCommand extends BaseMenuCommand {
@@ -21,7 +16,7 @@ public class SortingCommand extends BaseMenuCommand {
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
-    CustomLinkedList<User> currentUsers = userManager.getUsers();
+    customCollection.CustomLinkedList<User> currentUsers = userManager.getUsers();
     if (currentUsers == null || currentUsers.isEmpty()) {
       System.out.println("Ошибка: Массив пуст. Нечего сортировать.");
       return;

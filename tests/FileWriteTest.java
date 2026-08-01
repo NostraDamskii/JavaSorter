@@ -2,8 +2,8 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import src.FileWrite;
-import src.user.User;
+import customCollection.FileWrite;
+import user.User;
 
 import java.io.File;
 import java.io.IOException;

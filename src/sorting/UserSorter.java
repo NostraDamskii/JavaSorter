@@ -1,23 +1,18 @@
-package src.sorting;
+package sorting;
 
-import src.CustomLinkedList;
-import src.user.User;
 
-import java.util.Collections;
+import customCollection.CustomLinkedList;
+import user.User;
+
 import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import src.user.User;
-import src.CustomLinkedList;
 
 public class UserSorter {
-    public CustomLinkedList<User> sort(CustomLinkedList<User> users, UserSortStrategy strategy) {
+    public customCollection.CustomLinkedList<User> sort(CustomLinkedList<User> users, UserSortStrategy strategy) {
         if (users == null || users.isEmpty()) {
             return new CustomLinkedList<>();
         }
 
-        CustomLinkedList<User> sortedList = new CustomLinkedList<>();
+        customCollection.CustomLinkedList<User> sortedList = new CustomLinkedList<>();
 
         for (User user : users) {
             sortedList.add(user);
@@ -25,12 +20,12 @@ public class UserSorter {
 
         return mergeSort(sortedList, strategy);
     }
-    private CustomLinkedList<User> mergeSort(CustomLinkedList<User> list, Comparator<User> comparator) {
+    private customCollection.CustomLinkedList<User> mergeSort(CustomLinkedList<User> list, Comparator<User> comparator) {
         if (list.size() <= 1) {
             return list;
         }
-        CustomLinkedList<User> left = new CustomLinkedList<>();
-        CustomLinkedList<User> right = new CustomLinkedList<>();
+        CustomLinkedList<User> left = new customCollection.CustomLinkedList<>();
+        customCollection.CustomLinkedList<User> right = new CustomLinkedList<>();
 
         int mid = list.size() / 2;
         int index = 0;
@@ -54,7 +49,7 @@ public class UserSorter {
 
     private CustomLinkedList<User> merge(CustomLinkedList<User> left, CustomLinkedList<User> right,
                                          Comparator<User> comparator) {
-        CustomLinkedList<User> result = new CustomLinkedList<>();
+        customCollection.CustomLinkedList<User> result = new CustomLinkedList<>();
 
 
         java.util.Iterator<User> leftIter = left.iterator();

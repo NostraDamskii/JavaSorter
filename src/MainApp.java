@@ -1,16 +1,9 @@
-package src;
+import menu.*;
+import user.UserManager;
 
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Scanner;
-import src.menu.ClearCommand;
-import src.menu.DisplayUsersCommand;
-import src.menu.ExportToFileCommand;
-import src.menu.FillStrategyCommand;
-import src.menu.MenuCommand;
-import src.menu.MenuConfig;
-import src.menu.ParallelCountCommand;
-import src.menu.SortingCommand;
+import java.util.TreeMap;
 
 public class MainApp {
   private final Scanner scanner = new Scanner(System.in);

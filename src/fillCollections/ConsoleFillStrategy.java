@@ -1,9 +1,11 @@
-package src.fillCollections;
+package fillCollections;
 
-import src.CustomLinkedList;
-import src.user.User;
+
+import customCollection.CustomLinkedList;
+import user.User;
 
 import java.util.Scanner;
+
 
 public class ConsoleFillStrategy implements UserFillStrategy {
 

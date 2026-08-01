@@ -1,6 +1,6 @@
-package src.fillCollections;
-import src.CustomLinkedList;
-import src.user.User;
+package fillCollections;
+
+import user.User;
 
 import java.util.concurrent.ThreadLocalRandom;
 

@@ -1,10 +1,10 @@
-package tests;
 
+
+import customCollection.CustomLinkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import src.CustomLinkedList;
-import src.sorting.EvenSorting;
-import src.user.User;
+import sorting.EvenSorting;
+import user.User;
 
 class EvenSortingTest
 {

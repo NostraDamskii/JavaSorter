@@ -1,10 +1,10 @@
 
 
 import org.junit.jupiter.api.Test;
-import src.CustomLinkedList;
-import src.sorting.UserSortStrategy;
-import src.sorting.UserSorter;
-import src.user.User;
+import customCollection.CustomLinkedList;
+import sorting.UserSortStrategy;
+import sorting.UserSorter;
+import user.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

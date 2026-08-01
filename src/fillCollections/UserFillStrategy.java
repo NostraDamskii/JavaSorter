@@ -1,11 +1,8 @@
-package src.fillCollections;
+package fillCollections;
 
-import src.CustomLinkedList;
-import src.user.User;
-
-import java.util.List;
+import user.User;
 
 public interface UserFillStrategy {
 
-  void fill(CustomLinkedList<User> users);
+  void fill(customCollection.CustomLinkedList<User> users);
 }
