@@ -17,7 +17,7 @@ public class ExportToFileCommand extends BaseMenuCommand {
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
     CustomLinkedList<User> currentUsers = userManager.getUsers();
-    if (currentUsers == null || currentUsers.size() == 0) {
+    if (currentUsers == null || currentUsers.isEmpty()) {
       System.out.println("Ошибка: Массив пуст. Нечего сохранять.");
       return;
     }

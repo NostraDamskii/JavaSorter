@@ -1,4 +1,3 @@
-package tests;
 
 import core.CustomLinkedList;
 import org.junit.jupiter.api.Assertions;
