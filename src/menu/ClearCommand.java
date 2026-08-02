@@ -11,6 +11,11 @@ public class ClearCommand extends BaseMenuCommand {
 
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
+    if (userManager.isEmpty()) {
+      System.out.println("Список пользователей уже пуст!");
+      return;
+    }
+
     System.out.print("Очистить массив? (y/n): ");
 
     if (scanner.nextLine().equalsIgnoreCase("y")) {

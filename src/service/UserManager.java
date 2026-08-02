@@ -4,6 +4,7 @@ import core.CustomLinkedList;
 import core.User;
 
 public class UserManager {
+
   private CustomLinkedList<User> users = new CustomLinkedList<>();
   private UserFillStrategy strategy;
 
@@ -23,10 +24,16 @@ public class UserManager {
   }
 
   public void clear() {
-    users.clear();
+    if (users != null) {
+      users.clear();
+    }
   }
 
   public CustomLinkedList<User> getUsers() {
     return users;
+  }
+
+  public boolean isEmpty() {
+    return users == null || users.isEmpty();
   }
 }
