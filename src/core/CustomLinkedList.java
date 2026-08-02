@@ -163,7 +163,6 @@ public class CustomLinkedList<T> implements Iterable<T> {
         current = current.next;
         estSize--;
       }
-
       return Spliterators.spliterator(a, 0, mid, ORDERED | SIZED | SUBSIZED);
     }
 

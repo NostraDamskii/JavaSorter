@@ -1,5 +1,5 @@
 
-import dataFill.RandomGen;
+import service.RandomGen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

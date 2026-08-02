@@ -70,7 +70,6 @@ public class SortingCommand extends BaseMenuCommand {
       }
       case 7 -> {
         System.out.println("Выполняется чётная сортировка...");
-        // Передаем кастомный список напрямую в обновленный метод
         EvenSorting.sortByEvenPassword(currentUsers);
       }
       default -> {

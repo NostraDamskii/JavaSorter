@@ -1,7 +1,7 @@
 package base;
 
 import core.CustomLinkedList;
-import dataFill.RandomGen;
+import service.RandomGen;
 import sorting.EvenSorting;
 import core.User;
 

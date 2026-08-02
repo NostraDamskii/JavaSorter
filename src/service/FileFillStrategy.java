@@ -1,12 +1,14 @@
 package service;
 
 import core.CustomLinkedList;
-import dataFill.UserFillStrategy;
 import core.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class FileFillStrategy implements UserFillStrategy {
 
@@ -19,29 +21,25 @@ public class FileFillStrategy implements UserFillStrategy {
   }
 
   @Override
-  public void fill(CustomLinkedList<User> users) { // Заменено на core.CustomLinkedList<User>
+  public void fill(CustomLinkedList<User> users) {
     int added = 0;
-    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-      String line;
-      int lineNumber = 0;
+    try (Stream<String> lines = Files.lines(Paths.get(filePath))) {
 
-      while ((line = reader.readLine()) != null && added < count) {
-        lineNumber++;
-        if (line.trim().isEmpty()) {
-          continue;
-        }
-        try {
-          User user = parseUser(line);
-          users.add(user);
-          added++;
-          System.out.println("Загружен из файла: " + user.getName());
-        } catch (IllegalArgumentException e) {
-          System.err.println("Ошибка в строке " + lineNumber + ": " + e.getMessage());
-        }
-      }
-      System.out.println("Из файла успешно загружено пользователей: " + added);
-    } catch (IOException e) {
-      System.err.println("Ошибка при чтении файла: " + e.getMessage());
+      CustomLinkedList<User> loadedUsers = lines
+          .map(String::trim)
+          .filter(line -> !line.isEmpty())
+          .limit(count)
+          .map(this::parseUser)
+          .collect(
+              CustomLinkedList::new,
+              CustomLinkedList::add,
+              CustomLinkedList::addAll
+          );
+
+      users.addAll(loadedUsers);
+      System.out.println("Из файла успешно загружено пользователей: " + loadedUsers.size());
+    } catch (IOException | IllegalArgumentException e) {
+      System.out.println("Ошибка при чтении файла: " + e.getMessage());
     }
   }
 

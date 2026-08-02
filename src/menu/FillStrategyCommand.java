@@ -1,9 +1,9 @@
 package menu;
 
 import service.UserManager;
-import dataFill.ConsoleFillStrategy;
+import service.ConsoleFillStrategy;
 import service.FileFillStrategy;
-import dataFill.RandomFillStrategy;
+import service.RandomFillStrategy;
 import java.util.Scanner;
 
 public class FillStrategyCommand extends BaseMenuCommand {

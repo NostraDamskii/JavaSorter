@@ -1,4 +1,4 @@
-package dataFill;
+package service;
 import core.User;
 
 import java.util.concurrent.ThreadLocalRandom;

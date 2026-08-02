@@ -1,7 +1,6 @@
 package service;
 
 import core.CustomLinkedList;
-import dataFill.UserFillStrategy;
 import core.User;
 
 public class UserManager {
