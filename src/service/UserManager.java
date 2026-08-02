@@ -1,6 +1,6 @@
 package service;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import dataFill.UserFillStrategy;
 import core.User;
 

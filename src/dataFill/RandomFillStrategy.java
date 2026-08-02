@@ -1,6 +1,6 @@
 package dataFill;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import core.User;
 
 public class RandomFillStrategy implements UserFillStrategy {

@@ -1,7 +1,7 @@
 package menu;
 
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import service.FileWrite;
 import service.UserManager;
 import core.User;

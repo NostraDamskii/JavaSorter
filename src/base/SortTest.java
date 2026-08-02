@@ -1,5 +1,6 @@
 package base;
 
+import core.CustomLinkedList;
 import dataFill.RandomGen;
 import sorting.EvenSorting;
 import core.User;

@@ -1,6 +1,6 @@
 package sorting;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import core.User;
 
 public class UserSorter {

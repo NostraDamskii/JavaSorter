@@ -1,6 +1,6 @@
 package tests;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sorting.EvenSorting;

@@ -1,6 +1,6 @@
 package service;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import dataFill.UserFillStrategy;
 import core.User;
 
@@ -19,7 +19,7 @@ public class FileFillStrategy implements UserFillStrategy {
   }
 
   @Override
-  public void fill(CustomLinkedList<User> users) { // Заменено на base.CustomLinkedList<User>
+  public void fill(CustomLinkedList<User> users) { // Заменено на core.CustomLinkedList<User>
     int added = 0;
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
       String line;

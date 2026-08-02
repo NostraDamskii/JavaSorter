@@ -1,6 +1,6 @@
 package menu;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 import service.UserManager;
 import core.User;
 import java.util.Scanner;

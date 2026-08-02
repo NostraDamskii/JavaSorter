@@ -2,7 +2,7 @@
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import base.CustomLinkedList;
+import core.CustomLinkedList;
 
 import org.junit.jupiter.api.Test;
 import sorting.UserSortStrategy;
