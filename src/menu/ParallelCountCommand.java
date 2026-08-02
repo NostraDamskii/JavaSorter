@@ -14,13 +14,15 @@ public class ParallelCountCommand extends BaseMenuCommand {
   @Override
   public void execute(Scanner scanner, UserManager userManager) {
     CustomLinkedList<User> users = userManager.getUsers();
-    if (checkData(users)) {
+    if (!checkData(users)) {
       return;
     }
     User targetUser = getUser(scanner);
     long startTime = System.nanoTime();
-    long resultCount = search(targetUser, scanner, users);
+    int resultCount = search(targetUser, scanner, users);
     long endTime = System.nanoTime();
+
+    printResult(targetUser.toString(), resultCount,startTime,endTime);
   }
 
   private boolean checkData(CustomLinkedList<User> users) {
@@ -31,7 +33,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
     return true;
   }
 
-  private void printResult(String targetUser, int resultCount, int startTime, int endTime) {
+  private void printResult(String targetUser, int resultCount, long startTime, long endTime) {
     System.out.println("=================================================================");
     System.out.printf(" РЕЗУЛЬТАТ МНОГОПОТОЧНОГО ПОДСЧЕТА:%n");
     System.out.printf(" Искомый объект   : %s%n", targetUser);
@@ -40,8 +42,8 @@ public class ParallelCountCommand extends BaseMenuCommand {
     System.out.println("=================================================================");
   }
 
-  private long search(User targetUser, Scanner scanner, CustomLinkedList<User> users) {
-    return users.parallelStream()
+  private int search(User targetUser, Scanner scanner, CustomLinkedList<User> users) {
+    return (int) users.parallelStream()
         .filter(targetUser::equals)
         .count();
   }
@@ -55,15 +57,14 @@ public class ParallelCountCommand extends BaseMenuCommand {
     String email = scanner.nextLine();
 
     System.out.print("Введите пароль (число): ");
-    int password =0;
     while (!scanner.hasNextInt()) {
       System.out.println("Ошибка: Пароль должен быть целым числом!");
       System.out.print("Введите пароль (число): ");
       scanner.nextLine();
-
-      password = scanner.nextInt();
-      scanner.nextLine();
     }
+    int password = scanner.nextInt();
+    scanner.nextLine();
+
     return new User.Builder()
         .name(name)
         .email(email)

@@ -1,5 +1,7 @@
 package core;
 
+import java.util.Objects;
+
 public class User {
   private final String name;
   private final String email;
@@ -54,5 +56,25 @@ public class User {
   @Override
   public String toString() {
     return String.format("Имя: %-12s | Email: %-22s | Пароль: %d", name, email, password);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    User user = (User) o;
+
+    if (password != user.password) return false;
+    if (!Objects.equals(name, user.name)) return false;
+    return Objects.equals(email, user.email);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + password;
+    return result;
   }
 }
