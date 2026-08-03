@@ -19,7 +19,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
     }
     User targetUser = getUser(scanner);
     long startTime = System.nanoTime();
-    int resultCount = search(targetUser, scanner, users);
+    int resultCount = search(targetUser, users);
     long endTime = System.nanoTime();
 
     printResult(targetUser.toString(), resultCount,startTime,endTime);
