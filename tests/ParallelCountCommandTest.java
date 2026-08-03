@@ -22,7 +22,6 @@ public class ParallelCountCommandTest {
   @BeforeEach
   void setUp() {
     System.setOut(new PrintStream(outputStreamCaptor));
-
     command = new ParallelCountCommand(8, MenuConfig.PARALLEL_COUNT);
   }
 
@@ -45,20 +44,24 @@ public class ParallelCountCommandTest {
   void testExecute_WhenListHasMatches_ShouldCorrectlyCountThem() {
     UserManager userManager = new UserManager();
     CustomLinkedList<User> initialUsers = new CustomLinkedList<>();
-    User target = new User.Builder().name("Ivan").email("ivan@mail.com").password(123).build();
-    User other = new User.Builder().name("Petr").email("petr@mail.com").password(456).build();
+
+    User target = new User.Builder().name("Ivan").email("ivan@mail.com").password(123456).build();
+    User other = new User.Builder().name("Petr").email("petr@mail.com").password(654321).build();
+
     initialUsers.add(target);
     initialUsers.add(other);
     initialUsers.add(target);
     userManager.setUsers(initialUsers);
 
-    String simulatedInput = "Ivan\nivan@mail.com\n123\n";
+    String simulatedInput = "Ivan\n123456\nivan@mail.com\n";
     Scanner scanner = new Scanner(simulatedInput);
 
     command.execute(scanner, userManager);
 
     String output = outputStreamCaptor.toString().trim();
-    assertTrue(output.contains("РЕЗУЛЬТАТ МНОГОПОТОЧНОГО ПОДСЧЕТА"), "Должна напечататься карточка результата");
-    assertTrue(output.contains("Найдено вхождений: 2"), "Параллельный стрим должен насчитать ровно 2 совпадения");
+    assertTrue(output.contains("РЕЗУЛЬТАТ МНОГОПОТОЧНОГО ПОДСЧЕТА"),
+        "Должна напечататься карточка результата");
+    assertTrue(output.contains("Найдено вхождений: 2"),
+        "Параллельный стрим должен насчитать ровно 2 совпадения");
   }
 }
