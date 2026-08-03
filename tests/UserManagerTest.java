@@ -1,4 +1,4 @@
-package tests;
+
 import service.UserManager;
 import org.junit.jupiter.api.Assertions;
 import core.User;
