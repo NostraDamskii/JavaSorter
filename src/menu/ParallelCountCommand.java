@@ -1,6 +1,7 @@
 package menu;
 
 import core.CustomLinkedList;
+import service.ConsoleFillStrategy;
 import service.UserManager;
 import core.User;
 import java.util.Scanner;
@@ -49,27 +50,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
   }
 
   private User getUser(Scanner scanner) {
-    System.out.println("\n--- Введите данные пользователя для подсчета вхождений ---");
-    System.out.print("Введите имя: ");
-    String name = scanner.nextLine();
-
-    System.out.print("Введите email: ");
-    String email = scanner.nextLine();
-
-    System.out.print("Введите пароль (число): ");
-    while (!scanner.hasNextInt()) {
-      System.out.println("Ошибка: Пароль должен быть целым числом!");
-      System.out.print("Введите пароль (число): ");
-      scanner.nextLine();
-    }
-    int password = scanner.nextInt();
-    scanner.nextLine();
-
-    return new User.Builder()
-        .name(name)
-        .email(email)
-        .password(password)
-        .build();
+    return ConsoleFillStrategy.readSingleUser(scanner);
   }
 }
 

@@ -1,6 +1,7 @@
 package service;
 
 import core.CustomLinkedList;
+import core.DataConstants;
 import core.User;
 
 import java.util.Scanner;
@@ -10,7 +11,6 @@ public class ConsoleFillStrategy implements UserFillStrategy {
 
   private final int count;
   private final Scanner scanner = new Scanner(System.in);
-
   public ConsoleFillStrategy(int count) {
     this.count = count;
   }
@@ -19,7 +19,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
   public void fill(CustomLinkedList<User> users) {
     System.out.println("Заполнение вручную (" + count + " пользователей):");
 
-    CustomLinkedList<User> inputtedUsers = Stream.generate(this::readSingleUser)
+    CustomLinkedList<User> inputtedUsers = Stream.generate(()->readSingleUser(scanner))
         .limit(count)
         .collect(
             CustomLinkedList::new,
@@ -29,10 +29,10 @@ public class ConsoleFillStrategy implements UserFillStrategy {
     users.addAll(inputtedUsers);
   }
 
-  private User readSingleUser() {
-    String name = readName();
-    int password = readPassword();
-    String mail = readEmail();
+  public static User readSingleUser(Scanner scanner) {
+    String name = readName(scanner);
+    int password = readPassword(scanner);
+    String mail = readEmail(scanner);
     return new User.Builder()
         .name(name)
         .password(password)
@@ -41,7 +41,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
   }
 
 
-  private String readName() {
+  private static String readName(Scanner scanner) {
     while (true) {
       System.out.print("Введите имя: ");
       String name = scanner.nextLine();
@@ -54,7 +54,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
     }
   }
 
-  private int readPassword() {
+  private static int readPassword(Scanner scanner) {
     int password;
     while (true) {
       System.out.print("Введите пароль (число): ");
@@ -64,11 +64,11 @@ public class ConsoleFillStrategy implements UserFillStrategy {
         password = scanner.nextInt();
         scanner.nextLine();
 
-        if (password > 1000000 && password < 9999999) {
+        if (DataConstants.isPasswordCorrect(password)) {
           return password;
         }
 
-        System.out.println("Ошибка! Пароль должен быть больше 0.");
+        System.out.println(DataConstants.PASSWORD_ERROR_TEMPLATE);
       } else {
 
         System.out.println("Ошибка! Введите целое число.");
@@ -77,7 +77,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
     }
   }
 
-  private String readEmail() {
+  private static String readEmail(Scanner scanner) {
     String mail;
     while (true) {
       System.out.print("Введите e-mail: ");

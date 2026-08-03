@@ -51,12 +51,10 @@ class SortTest
     void testSortWithEmptyAndNull()
     {
         UserSorter sorter = new UserSorter();
-
         
         CustomLinkedList<User> nullResult = sorter.sort(null, UserSortStrategy.BY_NAME_ASC);
         Assertions.assertNotNull(nullResult, "метод должен вернуть пустой список, а не null");
         Assertions.assertTrue(nullResult.isEmpty(), "возвращенный список должен быть пустым");
-
         
         CustomLinkedList<User> emptyList = new CustomLinkedList<>();
         CustomLinkedList<User> emptyResult = sorter.sort(emptyList, UserSortStrategy.BY_NAME_ASC);

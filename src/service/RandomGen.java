@@ -1,4 +1,5 @@
 package service;
+import core.DataConstants;
 import core.User;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -19,7 +20,7 @@ public class RandomGen
         String email = EMAILS[random.nextInt(EMAILS.length)];
         
         
-        int password = random.nextInt(100000, 999999);
+        int password = random.nextInt(DataConstants.MIN_PASSWORD, DataConstants.MAX_PASSWORD);
         
         return new User.Builder().name(name).email(email).password(password).build();
     }

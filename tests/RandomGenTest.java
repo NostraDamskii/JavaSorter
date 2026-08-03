@@ -1,4 +1,5 @@
 
+import core.DataConstants;
 import service.RandomGen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -35,7 +36,7 @@ class RandomGenTest {
 
         
         int password = user.getPassword();
-        Assertions.assertTrue(password >= 100000 && password < 999999,
+        Assertions.assertTrue(DataConstants.isPasswordCorrect(password) ,
                 "пароль должен быть 6-значным (от 100000 до 999998) текущий пароль: " + password);
     }
 }
