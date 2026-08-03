@@ -48,7 +48,7 @@ class EvenSortingTest
     @Test
     void testSortByEvenPasswordWithNullAndEmpty()
     {
-        // дополнительный тест пустой список или null
+        // тест null список
         // метод не должен падать с ошибками
         Assertions.assertDoesNotThrow(() -> {
             EvenSorting.sortByEvenPassword(null);
