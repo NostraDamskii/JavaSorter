@@ -23,13 +23,4 @@ public class RandomGen
         // Возвращаем пользователя со случайными данными
         return new User.Builder().name(name).email(email).password(password).build();
     }
-        // Простой метод для проверки кода
-    public static void main(String[] args)
-    {
-        User testUser = randomGenerateUser();
-
-        System.out.println("имя: " + testUser.getName());
-        System.out.println("email: " + testUser.getEmail());
-        System.out.println("пароль: " + testUser.getPassword());
-    }
 }
