@@ -18,10 +18,10 @@
 
 ---
 ## Установка
-```bash
+Собрать самостоятельно
 git clone https://github.com/NostraDamskii/JavaSorter.git
-cd project
-npm install
+Скачать последний релиз 
+Запустить run.bat
 ```
 
 ---
