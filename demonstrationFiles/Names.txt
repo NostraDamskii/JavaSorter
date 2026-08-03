@@ -1,0 +1,11 @@
+Александр;291070;Evgeniy@gmail.com
+Сергей;481499;Vasiliy@mail.ru
+Евгений;433749;Svyatoslav@yandex.ru
+Василий;425432;Sergey@sibmail.com
+Евгений;612954;Svyatoslav@yandex.ru
+Александр;913584;Vasiliy@mail.ru
+Сергей;153033;Svyatoslav@yandex.ru
+Сергей;562384;Svyatoslav@yandex.ru
+Василий;448062;Vladislav@mail.ru
+Вячеслав;271296;Vasiliy@mail.ru
+Василий;576914;Sergey@sibmail.com
