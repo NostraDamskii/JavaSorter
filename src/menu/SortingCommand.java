@@ -22,12 +22,12 @@ public class SortingCommand extends BaseMenuCommand {
       return;
     }
     System.out.println("\n--- МЕНЮ СОРТИРОВКИ ---");
-    System.out.println("1. Сортировать по Имени (А-Я) (НУЖНО СДЕЛАТЬ)");
-    System.out.println("2. Сортировать по Имени (Я-А) (НУЖНО СДЕЛАТЬ)");
-    System.out.println("3. Сортировать по Email (А-Я) (НУЖНО СДЕЛАТЬ)");
-    System.out.println("4. Сортировать по Email (Я-А) (НУЖНО СДЕЛАТЬ)");
-    System.out.println("5. Сортировать по Паролю (Возрастание) (НУЖНО СДЕЛАТЬ)");
-    System.out.println("6. Сортировать по Паролю (Убывание) (НУЖНО СДЕЛАТЬ)");
+    System.out.println("1. Сортировать по Имени (А-Я)");
+    System.out.println("2. Сортировать по Имени (Я-А)");
+    System.out.println("3. Сортировать по Email (А-Я)");
+    System.out.println("4. Сортировать по Email (Я-А)");
+    System.out.println("5. Сортировать по Паролю (Возрастание)");
+    System.out.println("6. Сортировать по Паролю (Убывание)");
     System.out.println("7. ЧЁТНАЯ СОРТИРОВКА (чётные по паролю — сортируются, нечётные — на местах)");
     System.out.println("8. Назад");
     System.out.print("Выберите тип сортировки: ");
