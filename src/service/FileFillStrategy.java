@@ -20,7 +20,6 @@ public class FileFillStrategy implements UserFillStrategy {
 
   @Override
   public void fill(CustomLinkedList<User> users) {
-    int added = 0;
     try (Stream<String> lines = Files.lines(Paths.get(filePath))) {
 
       CustomLinkedList<User> loadedUsers = lines

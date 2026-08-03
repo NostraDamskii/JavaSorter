@@ -21,16 +21,7 @@ public class SortingCommand extends BaseMenuCommand {
       System.out.println("Ошибка: Массив пуст. Нечего сортировать.");
       return;
     }
-    System.out.println("\n--- МЕНЮ СОРТИРОВКИ ---");
-    System.out.println("1. Сортировать по Имени (А-Я)");
-    System.out.println("2. Сортировать по Имени (Я-А)");
-    System.out.println("3. Сортировать по Email (А-Я)");
-    System.out.println("4. Сортировать по Email (Я-А)");
-    System.out.println("5. Сортировать по Паролю (Возрастание)");
-    System.out.println("6. Сортировать по Паролю (Убывание)");
-    System.out.println("7. ЧЁТНАЯ СОРТИРОВКА (чётные по паролю — сортируются, нечётные — на местах)");
-    System.out.println("8. Назад");
-    System.out.print("Выберите тип сортировки: ");
+    printMenu();
 
     if (!scanner.hasNextInt()) {
       scanner.nextLine();
@@ -39,7 +30,9 @@ public class SortingCommand extends BaseMenuCommand {
     int choice = scanner.nextInt();
     scanner.nextLine();
 
-    if (choice == 8) return;
+    if (choice == 8) {
+      return;
+    }
 
     UserSorter sorter = new UserSorter();
 
@@ -77,9 +70,22 @@ public class SortingCommand extends BaseMenuCommand {
         return;
       }
     }
-
-    if (choice >= 1 && choice <= 7) {
-      System.out.println("Сортировка завершена. Используйте пункт 4 для просмотра или пункт 5 для сохранения.");
-    }
+    System.out.println(
+        "Сортировка завершена. Используйте пункт 4 для просмотра или пункт 5 для сохранения.");
   }
+
+  private void printMenu(){
+    System.out.println("\n--- МЕНЮ СОРТИРОВКИ ---");
+    System.out.println("1. Сортировать по Имени (А-Я)");
+    System.out.println("2. Сортировать по Имени (Я-А)");
+    System.out.println("3. Сортировать по Email (А-Я)");
+    System.out.println("4. Сортировать по Email (Я-А)");
+    System.out.println("5. Сортировать по Паролю (Возрастание)");
+    System.out.println("6. Сортировать по Паролю (Убывание)");
+    System.out.println(
+        "7. ЧЁТНАЯ СОРТИРОВКА (чётные по паролю — сортируются, нечётные — на местах)");
+    System.out.println("8. Назад");
+    System.out.print("Выберите тип сортировки: ");
+  }
+
 }

@@ -51,7 +51,6 @@ public class UserSorter {
                                          Comparator<User> comparator) {
         CustomLinkedList<User> result = new CustomLinkedList<>();
 
-
         java.util.Iterator<User> leftIter = left.iterator();
         java.util.Iterator<User> rightIter = right.iterator();
 
@@ -79,6 +78,5 @@ public class UserSorter {
         }
 
         return result;
-
     }
 }

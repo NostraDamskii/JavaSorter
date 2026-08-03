@@ -13,7 +13,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
   private int size;
 
   private static class Node<T> {
-    T data;
+    final T data;
     Node<T> next;
 
     Node(T data) {

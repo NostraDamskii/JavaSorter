@@ -16,7 +16,7 @@ public class DisplayUsersCommand extends BaseMenuCommand {
     System.out.println("\n--- ТЕКУЩИЙ МАССИВ ПОЛЬЗОВАТЕЛЕЙ ---");
     CustomLinkedList<User> currentUsers = userManager.getUsers();
 
-    if (currentUsers.size() == 0) {
+    if (currentUsers.isEmpty()) {
       System.out.println("Ошибка: Массив пуст. Сначала заполните его (пункты 1-3).");
       return;
     }

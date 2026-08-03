@@ -21,20 +21,17 @@ public class FileWrite
              PrintWriter printWriter = new PrintWriter(fileWriter))
         {
             // проход циклом по всем пользователям в массиве
-            for (int i = 0; i < array.length; i++)
-            {
-                User user = array[i];
-                //проверка на пустые ячейки
-                if (user == null)
-                {
-                    continue;
-                }
-                // собираем строку точно в таком же формате как в parseuser
-                // порядок Имя;Пароль;Почта
-                String textLine = user.getName() + ";" + user.getPassword() + ";" + user.getEmail();
-                // Записываем эту строчку в файл с помощью printWriter
-                printWriter.println(textLine);
+          for (User user : array) {
+            //проверка на пустые ячейки
+            if (user == null) {
+              continue;
             }
+            // собираем строку точно в таком же формате как в parseuser
+            // порядок Имя;Пароль;Почта
+            String textLine = user.getName() + ";" + user.getPassword() + ";" + user.getEmail();
+            // Записываем эту строчку в файл с помощью printWriter
+            printWriter.println(textLine);
+          }
             System.out.println("сохранено в файл: " + fileName);
         }
         catch (IOException e)

@@ -42,7 +42,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
     System.out.println("=================================================================");
   }
 
-  private int search(User targetUser, Scanner scanner, CustomLinkedList<User> users) {
+  private int search(User targetUser, CustomLinkedList<User> users) {
     return (int) users.parallelStream()
         .filter(targetUser::equals)
         .count();

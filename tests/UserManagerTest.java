@@ -11,9 +11,7 @@ class UserManagerTest {
         UserManager manager = new UserManager();
         // проверяем что метод выбрасывает ошибку IllegalStateException
         // стратегия  null
-        Assertions.assertThrows(IllegalStateException.class, () -> {
-            manager.populateUsers();
-        }, "Метод должен упасть с ошибкой так как стратегия заполнения null");
+        Assertions.assertThrows(IllegalStateException.class, manager::populateUsers, "Метод должен упасть с ошибкой так как стратегия заполнения null");
     }
 
     @org.junit.jupiter.api.Test
