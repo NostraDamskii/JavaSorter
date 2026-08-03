@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class CustomLinkedListTest {
 
-    // тестируем простое добавление add и размер списка size
+    
     @Test
     void testAddAndSize() {
         CustomLinkedList<String> list = new CustomLinkedList<>();
@@ -22,14 +22,14 @@ class CustomLinkedListTest {
         Assertions.assertEquals("второй", list.get(1));
     }
 
-    // тестируем вставку по конкретному индексу (insert)
+    
     @Test
     void testInsert() {
         CustomLinkedList<Integer> list = new CustomLinkedList<>();
-        list.add(10); // индекс 0
-        list.add(30); // индекс 1
+        list.add(10); 
+        list.add(30); 
 
-        // вставляем число 20 между ними в индекс 1
+        
         list.insert(1, 20);
 
         Assertions.assertEquals(3, list.size(), "размер должен увеличиться до 3");
@@ -38,7 +38,7 @@ class CustomLinkedListTest {
         Assertions.assertEquals(30, list.get(2));
     }
 
-    // тестируем удаление элемента
+    
     @Test
     void testRemove() {
         CustomLinkedList<String> list = new CustomLinkedList<>();
@@ -46,7 +46,7 @@ class CustomLinkedListTest {
         list.add("б");
         list.add("в");
 
-        // удаляем центральный элемент б индекс 1
+        
         list.remove(1);
 
         Assertions.assertEquals(2, list.size(), "после удаления размер должен стать равен 2");
@@ -54,24 +54,24 @@ class CustomLinkedListTest {
         Assertions.assertEquals("в", list.get(1), "элемент в должен сдвинуться на место удаленного б");
     }
 
-    // тестируем защиту от некорректных индексов
+    
     @Test
     void testIndexOutOfBoundsException() {
         CustomLinkedList<String> list = new CustomLinkedList<>();
         list.add("тест");
 
-        // пытаемся взять элемент с несуществующим индексом
+        
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
             list.get(5);
         }, "IndexOutOfBoundsException при выходе за границы списка");
 
-        // пытаемся удалить элемент с отрицательным
+        
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
             list.remove(-1);
         }, "IndexOutOfBoundsException при отрицательном индексе");
     }
 
-    // 5. тестируем работу цикла for
+    
     @Test
     void testIterator() {
         CustomLinkedList<Integer> list = new CustomLinkedList<>();

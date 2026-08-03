@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class SortTest
 {
-    // тест сортировки по числам пароль по возрастанию
+    
     @Test
     void testSortByPasswordAscending()
     {
@@ -26,7 +26,7 @@ class SortTest
         Assertions.assertEquals(999999, sorted.get(2).getPassword(), "последним должен быть самый большой пароль");
     }
 
-    // Тест сортировки по строкам имя по убыванию
+    
     @Test
     void testSortByNameDescending()
     {
@@ -37,27 +37,27 @@ class SortTest
 
         UserSorter sorter = new UserSorter();
 
-        // Сортируем по имени в обратном порядке от я до а
+        
         CustomLinkedList<User> sorted = sorter.sort(list, UserSortStrategy.BY_NAME_DESC);
 
-        // Проверяем обратный алфавитный порядок олег -> иван -> анна
+        
         Assertions.assertEquals("Олег", sorted.get(0).getName());
         Assertions.assertEquals("Иван", sorted.get(1).getName());
         Assertions.assertEquals("Анна", sorted.get(2).getName());
     }
 
-    // тест на пустой список
+    
     @Test
     void testSortWithEmptyAndNull()
     {
         UserSorter sorter = new UserSorter();
 
-        // проверяем что при передаче null метод вернет пустой список и не упадет с ошибкой
+        
         CustomLinkedList<User> nullResult = sorter.sort(null, UserSortStrategy.BY_NAME_ASC);
         Assertions.assertNotNull(nullResult, "метод должен вернуть пустой список, а не null");
         Assertions.assertTrue(nullResult.isEmpty(), "возвращенный список должен быть пустым");
 
-        // проверяем пустой список
+        
         CustomLinkedList<User> emptyList = new CustomLinkedList<>();
         CustomLinkedList<User> emptyResult = sorter.sort(emptyList, UserSortStrategy.BY_NAME_ASC);
         Assertions.assertTrue(emptyResult.isEmpty(), "список должен остаться пустым");

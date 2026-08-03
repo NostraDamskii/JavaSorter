@@ -34,7 +34,7 @@ public class DisplayUsersCommandTest {
 
   @Test
   void testExecute_WhenListIsEmpty_ShouldPrintErrorMessage() {
-    // Given: Создаем абсолютно пустой менеджер пользователей
+    
     UserManager emptyManager = new UserManager();
     Scanner scanner = new Scanner("");
 
@@ -56,7 +56,7 @@ public class DisplayUsersCommandTest {
     initialUsers.add(user2);
     userManager.setUsers(initialUsers);
 
-    Scanner scanner = new Scanner(""); // Сканер ввода не требует
+    Scanner scanner = new Scanner(""); 
     command.execute(scanner, userManager);
 
     String output = outputStreamCaptor.toString().trim();
