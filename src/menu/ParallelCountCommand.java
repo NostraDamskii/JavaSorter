@@ -23,7 +23,7 @@ public class ParallelCountCommand extends BaseMenuCommand {
     int resultCount = search(targetUser, users);
     long endTime = System.nanoTime();
 
-    printResult(targetUser.toString(), resultCount,startTime,endTime);
+    printResult(targetUser.toString(), resultCount, startTime, endTime);
   }
 
   private boolean checkData(CustomLinkedList<User> users) {

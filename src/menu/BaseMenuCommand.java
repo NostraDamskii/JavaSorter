@@ -1,6 +1,7 @@
 package menu;
 
 public abstract class BaseMenuCommand implements MenuCommand {
+
   private final int actionCode;
   private final String description;
 

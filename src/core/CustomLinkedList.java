@@ -9,10 +9,12 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public class CustomLinkedList<T> implements Iterable<T> {
+
   private Node<T> head;
   private int size;
 
   private static class Node<T> {
+
     final T data;
     Node<T> next;
 
@@ -124,11 +126,15 @@ public class CustomLinkedList<T> implements Iterable<T> {
       private Node<T> current = head;
 
       @Override
-      public boolean hasNext() { return current != null; }
+      public boolean hasNext() {
+        return current != null;
+      }
 
       @Override
       public T next() {
-        if (!hasNext()) throw new NoSuchElementException();
+        if (!hasNext()) {
+          throw new NoSuchElementException();
+        }
         T data = current.data;
         current = current.next;
         return data;
@@ -141,6 +147,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
   }
 
   private static class LinkedListSpliterator<T> implements Spliterator<T> {
+
     private Node<T> current;
     private int estSize;
 
@@ -168,7 +175,9 @@ public class CustomLinkedList<T> implements Iterable<T> {
 
     @Override
     public boolean tryAdvance(java.util.function.Consumer<? super T> action) {
-      if (action == null) throw new NullPointerException();
+      if (action == null) {
+        throw new NullPointerException();
+      }
       if (current != null && estSize > 0) {
         action.accept(current.data);
         current = current.next;

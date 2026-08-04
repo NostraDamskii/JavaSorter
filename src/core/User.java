@@ -3,6 +3,7 @@ package core;
 import java.util.Objects;
 
 public class User {
+
   private final String name;
   private final String email;
   private final int password;
@@ -26,6 +27,7 @@ public class User {
   }
 
   public static class Builder {
+
     private String name;
     private String email;
     private int password;
@@ -60,13 +62,21 @@ public class User {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     User user = (User) o;
 
-    if (password != user.password) return false;
-    if (!Objects.equals(name, user.name)) return false;
+    if (password != user.password) {
+      return false;
+    }
+    if (!Objects.equals(name, user.name)) {
+      return false;
+    }
     return Objects.equals(email, user.email);
   }
 

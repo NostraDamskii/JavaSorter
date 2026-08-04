@@ -12,6 +12,7 @@ import menu.SortingCommand;
 import service.UserManager;
 
 public class MainApp {
+
   private final Scanner scanner = new Scanner(System.in);
   private final UserManager userManager = new UserManager();
 

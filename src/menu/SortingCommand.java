@@ -74,7 +74,7 @@ public class SortingCommand extends BaseMenuCommand {
         "Сортировка завершена. Используйте пункт 4 для просмотра или пункт 5 для сохранения.");
   }
 
-  private void printMenu(){
+  private void printMenu() {
     System.out.println("\n--- МЕНЮ СОРТИРОВКИ ---");
     System.out.println("1. Сортировать по Имени (А-Я)");
     System.out.println("2. Сортировать по Имени (Я-А)");
@@ -87,5 +87,4 @@ public class SortingCommand extends BaseMenuCommand {
     System.out.println("8. Назад");
     System.out.print("Выберите тип сортировки: ");
   }
-
 }

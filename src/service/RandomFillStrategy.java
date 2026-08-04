@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RandomFillStrategy implements UserFillStrategy {
+
   private final int count;
 
   public RandomFillStrategy(int count) {

@@ -11,6 +11,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
 
   private final int count;
   private final Scanner scanner = new Scanner(System.in);
+
   public ConsoleFillStrategy(int count) {
     this.count = count;
   }
@@ -19,7 +20,7 @@ public class ConsoleFillStrategy implements UserFillStrategy {
   public void fill(CustomLinkedList<User> users) {
     System.out.println("Заполнение вручную (" + count + " пользователей):");
 
-    CustomLinkedList<User> inputtedUsers = Stream.generate(()->readSingleUser(scanner))
+    CustomLinkedList<User> inputtedUsers = Stream.generate(() -> readSingleUser(scanner))
         .limit(count)
         .collect(
             CustomLinkedList::new,

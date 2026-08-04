@@ -7,6 +7,7 @@ import service.RandomFillStrategy;
 import java.util.Scanner;
 
 public class FillStrategyCommand extends BaseMenuCommand {
+
   private final MenuConfig choice;
 
   public FillStrategyCommand(int actionCode, MenuConfig commandType) {
